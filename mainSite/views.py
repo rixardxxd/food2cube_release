@@ -32,7 +32,7 @@ class RestaurantAndMenuFromCompany(generics.ListAPIView):
 
 def landing(request):
 
-    return render(request,'mainSite/landing.html')# Create your views here.
+    return render(request,'mainSite/index.html')# Create your views here.
 
 def testing(request):
 

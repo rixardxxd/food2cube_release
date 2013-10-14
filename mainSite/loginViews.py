@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseServerError
 
 from django.shortcuts import render,get_object_or_404
 
@@ -6,10 +6,21 @@ from django.contrib.auth import authenticate,login,logout
 
 from mainSite.models import MyUser
 
+import json
+
+
 def login_user(request):
 
-    email = request.POST['email']
-    password = request.POST['password']
+    json_data = json.loads(request.raw_post_data)
+    email = ''
+    password = ''
+    try:
+        email = json_data['email']
+        password = json_data['password']
+    except KeyError:
+        HttpResponseServerError("Malformed data!")
+
+
     user = authenticate(username=email, password=password)
 
 
