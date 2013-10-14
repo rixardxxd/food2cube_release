@@ -1,0 +1,9 @@
+[10/Oct/2013 00:12:54] INFO [mainSite.views:28] company_id is 1
+[10/Oct/2013 00:42:38] INFO [mainSite.views:28] company_id is 1
+[10/Oct/2013 02:35:41] INFO [gunicorn.error:213] Worker exiting (pid: 1936)
+[11/Oct/2013 01:09:32] INFO [gunicorn.error:213] Worker exiting (pid: 474)
+[11/Oct/2013 23:34:04] INFO [mainSite.views:28] company_id is 1
+[11/Oct/2013 23:34:04] INFO [mainSite.views:31] static path   /Users/rixardxxd/Documents/food2cube_release/mainSite
+[11/Oct/2013 23:35:05] INFO [mainSite.views:28] company_id is 1
+[11/Oct/2013 23:35:05] INFO [mainSite.views:31] static path   /Users/rixardxxd/Documents/food2cube_release/mainSite
+[12/Oct/2013 00:02:54] INFO [gunicorn.error:213] Worker exiting (pid: 680)
