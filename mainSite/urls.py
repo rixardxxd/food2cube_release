@@ -11,8 +11,6 @@ from mainSite.models import Company,Restaurant
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-
-
 urlpatterns = patterns('',
     url(r'^$', views.landing, name='landing'),
     url(r'^testing/$', views.testing, name='testing'),
@@ -21,8 +19,6 @@ urlpatterns = patterns('',
     url(r'^signup/$',loginViews.signup_user, name='signup_user'),
     url(r'^listrestaurant/(?P<id>[0-9]+)/', views.RestaurantAndMenuFromCompany.as_view(),name='RestaurantAndMenuFromCompany'),
     url(r'^listcompany/', views.ListCompanies.as_view(),name='company-list'),
-
-
 )
 
 urlpatterns += staticfiles_urlpatterns()
