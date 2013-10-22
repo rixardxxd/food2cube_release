@@ -8,8 +8,13 @@ from rest_framework import generics
 
 from mainSite.serializers import CompanySerializer,RestaurantSerializer
 
+from food2cube.settings import BASE_DIR
+
+
 import logging
 log = logging.getLogger(__name__)
+
+
 
 class ListCompanies(generics.ListAPIView):
 
@@ -32,8 +37,9 @@ class RestaurantAndMenuFromCompany(generics.ListAPIView):
 
 def landing(request):
 
-    return render(request,'mainSite/index.html')# Create your views here.
-
+    return render(request,'index.html')# Create your views here.
+    #return make_response(open('templates/index.html').read())
+    #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
 def testing(request):
 
     return HttpResponse("You're looking at the results of poll.")

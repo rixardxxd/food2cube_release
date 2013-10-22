@@ -3,10 +3,11 @@ html {
 }
 body {
   height: 100%;
-  background: url('../img/bg.jpg') no-repeat top center;
+  background: url('/img/bg.jpg') no-repeat top center;
   background-size: cover;
   padding-top: 50px;
   background-position: 50% 50%;
+  background-color: #fffff7;
 }
 
 /*navbar*/
@@ -36,10 +37,9 @@ body {
   font-family: 'Quattrocento Sans', sans-serif;
 }
 
-
 /*content - banner*/
 .banner {
-  padding-top: 150px;
+  padding-top: 80px;
   text-align: center;
 }
 .banner h3 {
@@ -51,10 +51,18 @@ body {
 
 /*content - companies*/
 .companies {
-  padding-top: 60px;
+  padding-top: 20px;
   margin-left: 20%;
   margin-right: 20%;
   text-align: center;
+}
+.companies .choose-text {
+  padding-bottom: 20px;
+}
+.companies h4 {
+  font-family: 'Quattrocento Sans', sans-serif;
+  color: brown;
+  text-shadow: 1px 1px 1px white;
 }
 .companies a:hover {
   top: 5px;
