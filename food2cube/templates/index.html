@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Food2Cube</title>
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="../static/mainSite/app/styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="food2cubeApp">
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.1.0/es5-shim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.2.5/json3.min.js"></script>
+  <![endif]-->
+
+  <!-- navbar -->
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand logo">Food2Cube</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right signinup">
+          <li>
+            <a href="#signin" class="signin" data-toggle="modal">Sign In</a>
+          </li>
+          <li>
+            <a href="#signup" class="signup" data-toggle="modal">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <!-- signin -->
+  <div class="modal fade" id="signin">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" role="form" ng-submit="doLogin()" ng-controller="LoginCtrl">
+            <div class="form-group">
+              <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-10">
+                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" ng-model="user.email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" id="inputPassword1" placeholder="Password" ng-model="user.password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- signup -->
+  <div class="modal fade" id="signup">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputFirstName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputLastName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
+              <div class="col-lg-10">
+                <input type="email" class="form-control" id="inputEmail">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPhone" class="col-lg-2 control-label">Phone Number</label>
+              <div class="col-lg-10">
+                <input type="tel" class="form-control" id="inputPhone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPasswordConfirm" class="col-lg-2 control-label">Confirm Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" id="inputPasswordConfirm">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-default">Sign up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" ng-view=""></div>
+
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-sanitize.min.js"></script>
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="{{ STATIC_URL }}mainSite/app/scripts/app.js"></script>
+  <script src="{{ STATIC_URL }}mainSite/app/scripts/controllers/main.js"></script>
+  <script src="{{ STATIC_URL }}mainSite/app/scripts/controllers/company.js"></script>
+  <script src="{{ STATIC_URL }}mainSite/app/scripts/controllers/Login.js"></script>
+  <script src="{{ STATIC_URL }}mainSite/app/scripts/services/UserProfile.js"></script>
+  <script src="{{ STATIC_URL }}mainSite/app/scripts/services/Company.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
