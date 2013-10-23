@@ -13,14 +13,18 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/js/app.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/logo.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/oracle.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/food2cube/gunicorn.error.log" afterPath="$PROJECT_DIR$/food2cube/gunicorn.error.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainSite/views.py" afterPath="$PROJECT_DIR$/mainSite/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/Company.js" afterPath="$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/Company.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/app.js" afterPath="$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/app/views/company.html" afterPath="$PROJECT_DIR$/food2cube/static/mainSite/app/views/company.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/food2cube/templates/index.html" afterPath="$PROJECT_DIR$/food2cube/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/food2cube/static/mainSite/app/styles/main.css" afterPath="$PROJECT_DIR$/food2cube/static/mainSite/app/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="food2cube_release.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382414191232" ignored="false" />
-    <file path="/settings.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1381552290469" ignored="false" />
+    <file path="/settings.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382424847036" ignored="false" />
     <file path="/models.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1381378142091" ignored="false" />
     <file path="/loginViews.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1381389995229" ignored="false" />
     <file path="/urls.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1381385738725" ignored="false" />
@@ -34,7 +38,9 @@
     <file path="$PROJECT_DIR$/../django-angular/django-angular-blog/blog/posts/serializers.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382419050954" ignored="false" />
     <file path="$PROJECT_DIR$/../django-angular/django-angular-blog/blog/blog/urls.py" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382419050954" ignored="false" />
     <file path="$PROJECT_DIR$/../django-angular/django-angular-blog/blog/blog/templates/index.html" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382420479124" ignored="false" />
-    <file path="/main.css" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382421267607" ignored="false" />
+    <file path="/main.css" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382423557876" ignored="false" />
+    <file path="/company.html" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382423812055" ignored="false" />
+    <file path="/a.dummy" changelist="69b55e6b-01c1-4cc9-b788-a5cf1527263b" time="1382427144911" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,35 +60,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="64" selection-start="360" selection-end="360" vertical-scroll-proportion="0.42492917">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/js/app.js">
+        <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logo.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/logo.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainSite/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="15" column="9" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,14 +81,23 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/food2cube/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="23" selection-start="5914" selection-end="5914" vertical-scroll-proportion="0.0">
+            <state line="173" column="21" selection-start="5912" selection-end="5912" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/views/company.html">
+      <file leaf-file-name="company.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/controllers/company.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/controllers/Login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -109,34 +108,32 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/food2cube/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="0" selection-start="6669" selection-end="6669" vertical-scroll-proportion="-17.666666">
+            <state line="135" column="14" selection-start="5467" selection-end="5467" vertical-scroll-proportion="-1.28">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/styles/main.css">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/controllers/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="213" selection-end="213" vertical-scroll-proportion="0.29945552">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainSite/views.py">
+      <file leaf-file-name="Company.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/Company.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
+            <state line="8" column="78" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainSite/__init__.py">
+      <file leaf-file-name="UserProfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/UserProfile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -162,9 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/food2cube/wsgi.py" />
-        <option value="$PROJECT_DIR$/mainSite/admin.py" />
-        <option value="$PROJECT_DIR$/mainSite/serializers.py" />
         <option value="$PROJECT_DIR$/mainSite/models.py" />
         <option value="$PROJECT_DIR$/food2cube/gunicorn.error.log" />
         <option value="$PROJECT_DIR$/food2cube/urls.py" />
@@ -172,17 +166,19 @@
         <option value="$PROJECT_DIR$/mainSite/static/mainSite/index.html" />
         <option value="$PROJECT_DIR$/mainSite/static/mainSite/js/app.js" />
         <option value="$PROJECT_DIR$/mainSite/loginViews.py" />
-        <option value="$PROJECT_DIR$/food2cube/settings.py" />
         <option value="$PROJECT_DIR$/mainSite/templates/mainSite/index.html" />
         <option value="$PROJECT_DIR$/mainSite/urls.py" />
         <option value="$PROJECT_DIR$/mainSite/views.py" />
-        <option value="$PROJECT_DIR$/food2cube/templates/index.html" />
         <option value="$PROJECT_DIR$/food2cube/static/mainSite/app/styles/main.css" />
+        <option value="$PROJECT_DIR$/food2cube/static/mainSite/app/views/company.html" />
+        <option value="$PROJECT_DIR$/food2cube/settings.py" />
+        <option value="$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/Company.js" />
+        <option value="$PROJECT_DIR$/food2cube/templates/index.html" />
+        <option value="$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="95" />
     <option name="y" value="22" />
     <option name="width" value="1260" />
     <option name="height" value="722" />
@@ -351,6 +347,116 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="staticfiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staticfiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staticfiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staticfiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staticfiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="mainSite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -492,6 +598,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube_release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="food2cube" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,11 +836,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="95" y="22" width="1260" height="722" extended-state="0" />
+    <frame x="0" y="22" width="1260" height="722" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25041187" sideWeight="0.6710963" order="0" side_tool="false" content_ui="combo" />
@@ -686,7 +853,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -753,104 +919,100 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/staticfiles/admin/img/tooltag-arrowright_over.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/admin/img/tool-right_over.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/css/landing.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/img/oracle.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/img/bg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainSite/loginViews.py">
+    <entry file="file://$PROJECT_DIR$/food2cube/gunicorn.access.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/js/app.js">
+    <entry file="file://$PROJECT_DIR$/food2cube/gunicorn.error.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainSite/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/views/company.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainSite/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainSite/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/food2cube/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="23" selection-start="5914" selection-end="5914" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/food2cube/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="0" selection-start="6669" selection-end="6669" vertical-scroll-proportion="-17.666666">
+        <state line="13" column="0" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="213" selection-end="213" vertical-scroll-proportion="0.29945552">
+        <state line="89" column="68" selection-start="1658" selection-end="1658" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/views/company.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="93" selection-start="404" selection-end="446" vertical-scroll-proportion="-6.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/Company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="78" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/services/UserProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/controllers/company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/controllers/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/controllers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="21" selection-start="5912" selection-end="5912" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="14" selection-start="5467" selection-end="5467" vertical-scroll-proportion="-1.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/mainSite/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="9" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/food2cube/static/mainSite/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="64" selection-start="360" selection-end="360" vertical-scroll-proportion="0.42492917">
           <folding />
         </state>
       </provider>
