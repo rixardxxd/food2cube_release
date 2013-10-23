@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 
+#This is the model class
 
 class MyUserManager(BaseUserManager):
     def create_user(self, email,first_name,last_name,phone_number,company,
@@ -8,7 +9,6 @@ class MyUserManager(BaseUserManager):
 
         if not email:
             raise ValueError('Users must have an email address')
-
 
         user = self.model(
             email=MyUserManager.normalize_email(email),
@@ -34,7 +34,6 @@ class MyUserManager(BaseUserManager):
         if not email:
             raise ValueError('Users must have an email address')
 
-
         user = self.model(
             email=MyUserManager.normalize_email(email),
             first_name = first_name,
@@ -51,8 +50,6 @@ class MyUserManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
         return user
-
-
 
 
 class MyUser(AbstractBaseUser):
@@ -107,6 +104,7 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
+
 class Company(models.Model):
     name=models.CharField(max_length=100)
     street = models.CharField(max_length=100,blank=True,default="",)
@@ -116,9 +114,6 @@ class Company(models.Model):
 
     def __unicode__(self):
        return  self.name
-
-
-
 
 
 class Restaurant(models.Model):
@@ -132,7 +127,6 @@ class Restaurant(models.Model):
 
     def __unicode__(self):
         return  self.name
-
 
 
 class Menu(models.Model):
