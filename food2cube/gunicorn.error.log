@@ -11,3 +11,4 @@
 [18/Oct/2013 00:57:39] INFO [gunicorn.error:213] Worker exiting (pid: 474)
 [20/Oct/2013 20:12:28] INFO [gunicorn.error:213] Worker exiting (pid: 2595)
 [21/Oct/2013 19:05:17] INFO [gunicorn.error:213] Worker exiting (pid: 624)
+[22/Oct/2013 02:40:34] INFO [gunicorn.error:213] Worker exiting (pid: 1022)

@@ -2,3 +2,5 @@ venv
 *.pyc
 staticfiles
 .idea
+.DS_Store
+*.log
