@@ -139,7 +139,39 @@ class Menu(models.Model):
         return self.name
 
 
+#Following is data models defined for order and transaction system
+#Terms:
+#       Order : A placement that may contain a combination of different dishes of various quantity
+#       OrderLine : A line of an order, containing a certain dish and it's quantity
+#       Transaction : One financial transaction report recording key information of a transaction
+class Order(models.Model):
+    user = models.ForeignKey(MyUser)
+    dest_company = models.ForeignKey("Deliver To",Company)
+    restaurant = models.ForeignKey(Restaurant)
+    order_lines_string = models.CharField(max_length=4096,blank=True,default="")
+    order_time = models.DateTimeField("Order Time")
+    paid = models.BooleanField("Order Paid", default=False)
+    delivered = models.BooleanField("Order Delivered", default = False)
+
+    def __unicode__(self):
+        return self.user.email + " " + self.restaurant.name + " "+ self.order_time + " Paid:" + self.paid + " Delivered:"+self.delivered
 
 
+class OrderLine(models.Model):
+    order = models.ForeignKey(Order)
+    menu = models.ForeignKey(Menu)
+    quantity = models.IntegerField(default=1)
+
+    def __unicode__(self):
+        return self.menu.name + " X " + self.quantity
 
 
+class Transaction(models.Model):
+    user = models.ForeignKey(MyUser)
+    dest_company = models.ForeignKey("Deliver To",Company)
+    restaurant = models.ForeignKey(Restaurant)
+    transaction_time = models.DateTimeField("Transaction Time")
+    total_amount = models.DecimalField("Total Price", max_digits=8, decimal_places=2)
+
+    def __unicode__(self):
+        return self.user.email + " " + self.total_amount

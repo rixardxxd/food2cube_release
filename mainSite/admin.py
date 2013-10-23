@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from mainSite.models import MyUser,Restaurant,Menu,Company
+from mainSite.models import *
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
@@ -128,6 +128,10 @@ admin.site.register(MyUser, MyUserAdmin)
 admin.site.register(Restaurant)
 admin.site.register(Menu)
 admin.site.register(Company)
+admin.site.register(Order)
+admin.site.register(OrderLine)
+admin.site.register(Transaction)
+
 # ... and, since we're not using Django's builtin permissions,
 # unregister the Group model from admin.
 admin.site.unregister(Group)

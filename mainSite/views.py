@@ -2,13 +2,15 @@ from django.http import HttpResponse
 
 from django.shortcuts import render
 
-from mainSite.models import Restaurant,Company,Menu
+from mainSite.models import *
 
 from rest_framework import generics
 
 from mainSite.serializers import CompanySerializer,RestaurantSerializer
 
 from food2cube.settings import BASE_DIR
+
+from mainSite.transactionFunctions import *
 
 
 import logging
@@ -42,7 +44,10 @@ def landing(request):
     #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
 def testing(request):
 
-    return HttpResponse("You're looking at the results of poll.")
+    order = Order.objects.filter(id = 1 , name = 1)
+    order.id = 2
+    order.save()
+    return HttpResponse(caculate(1))
 
 # def getRestaurantAndMenuFromCompany(request):
 #
