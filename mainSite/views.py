@@ -44,10 +44,10 @@ def landing(request):
     #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
 def testing(request):
 
-    order = Order.objects.filter(id = 1 , name = 1)
-    order.id = 2
-    order.save()
-    return HttpResponse(caculate(1))
+    #order = Order.objects.filter(id = 1 , name = 1)
+    #order.id = 2
+    #order.save()
+    return caculateTotal(request)
 
 # def getRestaurantAndMenuFromCompany(request):
 #

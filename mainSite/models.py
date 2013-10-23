@@ -146,12 +146,12 @@ class Menu(models.Model):
 #       Transaction : One financial transaction report recording key information of a transaction
 class Order(models.Model):
     user = models.ForeignKey(MyUser)
-    dest_company = models.ForeignKey("Deliver To",Company)
+    dest_company = models.ForeignKey(Company)
     restaurant = models.ForeignKey(Restaurant)
     order_lines_string = models.CharField(max_length=4096,blank=True,default="")
     order_time = models.DateTimeField("Order Time")
-    paid = models.BooleanField("Order Paid", default=False)
-    delivered = models.BooleanField("Order Delivered", default = False)
+    paid = models.BooleanField(default=False)
+    delivered = models.BooleanField(default = False)
 
     def __unicode__(self):
         return self.user.email + " " + self.restaurant.name + " "+ self.order_time + " Paid:" + self.paid + " Delivered:"+self.delivered
@@ -168,10 +168,10 @@ class OrderLine(models.Model):
 
 class Transaction(models.Model):
     user = models.ForeignKey(MyUser)
-    dest_company = models.ForeignKey("Deliver To",Company)
+    dest_company = models.ForeignKey(Company)
     restaurant = models.ForeignKey(Restaurant)
     transaction_time = models.DateTimeField("Transaction Time")
-    total_amount = models.DecimalField("Total Price", max_digits=8, decimal_places=2)
+    total_amount = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __unicode__(self):
         return self.user.email + " " + self.total_amount
