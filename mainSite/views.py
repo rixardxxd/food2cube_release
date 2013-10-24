@@ -44,10 +44,33 @@ def landing(request):
     #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
 def testing(request):
 
-    #order = Order.objects.filter(id = 1 , name = 1)
-    #order.id = 2
-    #order.save()
-    return caculateTotal(request)
+    #Prepare Data:
+    order_object = {
+        'order':
+            {
+                'user_id':1,
+                'company_id':1,
+                'items':[
+                    {   'menu_id':1, 'restaurant_id':1, 'amount':2, 'menu_name':'Kens Fried Chicken'},
+                    {   'menu_id':2, 'restaurant_id':1, 'amount':2, 'menu_name':'Kens Fried Duck'},
+                    {   'menu_id':1, 'restaurant_id':1, 'amount':3, 'menu_name':'Kens Fried Chicken'},
+                ]
+            }
+    }
+    data = json.dumps(order_object, indent=4)
+    #raw_data = request.raw_post_data
+    raw_data = data
+
+    #Call out target function
+    try:
+        #print()
+        result = generateBillGateway(raw_data)
+    except KeyError:
+        HttpResponseServerError("Malformed data!")
+
+    return HttpResponse(result)
+
+    #return precalculateTotalPrice(request)
 
 # def getRestaurantAndMenuFromCompany(request):
 #

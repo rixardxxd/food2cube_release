@@ -113,7 +113,10 @@ class Company(models.Model):
     zip_code = models.IntegerField(blank=True,default=0,)
 
     def __unicode__(self):
-       return  self.name
+        return  self.name
+
+    def getAddress(self):
+        return "{0}, {1}, {2} {3}".format(self.street,self.city,self.state,self.zip_code)
 
 
 class Restaurant(models.Model):
@@ -128,12 +131,17 @@ class Restaurant(models.Model):
     def __unicode__(self):
         return  self.name
 
+    def getAddress(self):
+        return "{0}, {1}, {2} {3}".format(self.street,self.city,self.state,self.zip_code)
+
+
 
 class Menu(models.Model):
     name = models.CharField(max_length=100)
     ingredients = models.CharField(max_length=300,blank=True,default="",)
     category = models.CharField(max_length=100,blank=True,default="",)
     restaurant = models.ForeignKey(Restaurant,related_name="menus")
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __unicode__(self):
         return self.name
