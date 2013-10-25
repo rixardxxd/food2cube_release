@@ -47,4 +47,5 @@ if [ "$?" -gt 0 ]; then
 fi
 echo "New database models sync SUCCESS."
 
-
+banner "Insert Test Data into Database"
+$ABSPATH/fillTestData
