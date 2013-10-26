@@ -46,10 +46,10 @@ def testing(request):
 
     #Prepare Data:
     order_object = {
+        'user' : {  'user_id' : 1 },
+        'company' : {   'company_id' : 1 },
         'order':
             {
-                'user_id':1,
-                'company_id':1,
                 'items':[
                     {   'menu_id':1, 'restaurant_id':1, 'amount':2, 'menu_name':'Kens Fried Chicken'},
                     {   'menu_id':2, 'restaurant_id':1, 'amount':2, 'menu_name':'Kens Fried Duck'},
@@ -64,11 +64,22 @@ def testing(request):
     #Call out target function
     try:
         #print()
-        result = generateBillGateway(raw_data)
+        result1 = generateBillGateway(raw_data)
+
+        result1=json.loads(result1)
+        result1['user']={'user_id':1}
+        result1['company']={'company_id':1}
+
+        log.info("result1")
+        log.info(result1)
+        result1=json.dumps(result1)
+
+        result2 = placeBillGateway(result1)
     except KeyError:
+        log.info("Malformed Data!!")
         HttpResponseServerError("Malformed data!")
 
-    return HttpResponse(result)
+    return HttpResponse(result2)
 
     #return precalculateTotalPrice(request)
 

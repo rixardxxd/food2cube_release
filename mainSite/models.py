@@ -107,6 +107,7 @@ class MyUser(AbstractBaseUser):
 
 class Company(models.Model):
     name=models.CharField(max_length=100)
+    group_name=models.CharField(max_length=100,blank=True)
     street = models.CharField(max_length=100,blank=True,default="",)
     city = models.CharField(max_length=100,blank=True,default="",)
     state = models.CharField(max_length=100,blank=True,default="",)
@@ -135,7 +136,6 @@ class Restaurant(models.Model):
         return "{0}, {1}, {2} {3}".format(self.street,self.city,self.state,self.zip_code)
 
 
-
 class Menu(models.Model):
     name = models.CharField(max_length=100)
     ingredients = models.CharField(max_length=300,blank=True,default="",)
@@ -155,14 +155,16 @@ class Menu(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(MyUser)
     dest_company = models.ForeignKey(Company)
-    restaurant = models.ForeignKey(Restaurant)
+    deliver_address = models.CharField(max_length=1024, blank=True, default="")
+    message = models.CharField(max_length=1024, blank=True, default="")
+    restaurants = models.ManyToManyField(Restaurant)
     order_lines_string = models.CharField(max_length=4096,blank=True,default="")
-    order_time = models.DateTimeField("Order Time")
+    order_time = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
     delivered = models.BooleanField(default = False)
 
     def __unicode__(self):
-        return self.user.email + " " + self.restaurant.name + " "+ self.order_time + " Paid:" + self.paid + " Delivered:"+self.delivered
+        return self.user.email + " " + self.dest_company.name + " " + str(self.order_time)
 
 
 class OrderLine(models.Model):
@@ -171,15 +173,17 @@ class OrderLine(models.Model):
     quantity = models.IntegerField(default=1)
 
     def __unicode__(self):
-        return self.menu.name + " X " + self.quantity
+        return self.menu.name + " X " + str(self.quantity)
 
 
 class Transaction(models.Model):
     user = models.ForeignKey(MyUser)
     dest_company = models.ForeignKey(Company)
-    restaurant = models.ForeignKey(Restaurant)
-    transaction_time = models.DateTimeField("Transaction Time")
+    restaurants = models.ManyToManyField(Restaurant)
+    company_name = models.CharField(max_length=100)
+    restaurant_names = models.CharField(max_length=1048)
+    transaction_time = models.DateTimeField(auto_now=True)
     total_amount = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __unicode__(self):
-        return self.user.email + " " + self.total_amount
+        return self.user.email + " " + str(self.total_amount)

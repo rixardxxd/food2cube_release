@@ -1,8 +1,8 @@
 \c food2cube
 \dt
 
-INSERT INTO "mainSite_company" (id,name,street,city,state,zip_code) VALUES (1,'Yahoo', '701 First Ave', 'Sunnyvale', 'CA', '94089');
-INSERT INTO "mainSite_company" (id,name,street,city,state,zip_code) VALUES (2,'Google', '2343 Second Ave', 'Sunnyvale', 'CA', '94089');
+INSERT INTO "mainSite_company" (id,name,group_name,street,city,state,zip_code) VALUES (1,'Yahoo', 'Yahoo','701 First Ave', 'Sunnyvale', 'CA', '94089');
+INSERT INTO "mainSite_company" (id,name,group_name,street,city,state,zip_code) VALUES (2,'Google', 'Google','2343 Second Ave', 'Sunnyvale', 'CA', '94089');
 
 INSERT INTO "mainSite_restaurant" (id,name,street,city,state,zip_code, phone_number) VALUES (1,'Top Spicy', '2345 hot street', 'Desert', 'Florida', '99999', 4088888888);
 
