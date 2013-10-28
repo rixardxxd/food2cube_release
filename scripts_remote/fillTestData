@@ -1,0 +1,21 @@
+ABSPATH=$(cd "$(dirname "$0")"; pwd)
+TOP="$ABSPATH/.."
+
+MANAGE_PY="${TOP}/manage.py"
+POSTGRES_HOME="/Applications/Postgres.app"
+PSQL="${POSTGRES_HOME}/Contents/MacOS/bin/psql"
+
+DB_NAME=food2cube
+DATA_SQL_FILE=$ABSPATH/TestDataSQL
+
+${PSQL} -f $DATA_SQL_FILE
+
+CHK=`${PSQL} -d food2cube -c 'select * from "mainSite_company";' | wc -l`
+
+if [ $CHK -eq 4 ]; then
+	echo "Database Table mainSite_company is still empty. Error may occured inserting data. Fix and retry."
+	exit 1
+fi
+echo "Insert Test Data into Database SUCCESS."
+
+

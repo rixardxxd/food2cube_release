@@ -1,0 +1,29 @@
+ABSPATH=$(cd "$(dirname "$0")"; pwd)
+TOP="$ABSPATH/.."
+
+MANAGE_PY="${TOP}/manage.py"
+PSQL="heroku pg:psql"
+
+DB_NAME=food2cube
+
+function banner()
+{
+	echo "========== $1 =========="
+};
+
+
+banner "Validate New Database Models"
+python ${MANAGE_PY} validate
+if [ "$?" -gt 0 ]; then
+	echo "New database models validation FAILED. Fix errors and retry."
+	exit 1
+fi
+echo "New database models validation SUCCESS."
+
+banner "Sync New Database Models"
+python ${MANAGE_PY} syncdb
+if [ "$?" -gt 0 ]; then
+	echo "New database models sync FAILED. Fix errors and retry."
+	exit 1
+fi
+echo "New database models sync SUCCESS."
