@@ -160,7 +160,7 @@ AUTH_USER_MODEL = 'mainSite.MyUser'
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config(default='postgres://fangyuew@localhost/food2cube')
+DATABASES['default'] =  dj_database_url.config(default='postgres://wppa@localhost/food2cube')
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -247,9 +247,12 @@ LOGGING = {
         },
     }
 }
+<<<<<<< HEAD
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'app18955593@heroku.com'
 EMAIL_HOST_PASSWORD = 'kxh85oni'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+=======
+>>>>>>> 5ed1feab45a1250a125b4afcc5c656605c4cd178
