@@ -1,4 +1,3 @@
-\c food2cube
 \dt
 
 INSERT INTO "mainSite_company" (id,name,group_name,street,city,state,zip_code) VALUES (1,'Yahoo', 'Yahoo','701 First Ave', 'Sunnyvale', 'CA', '94089');
