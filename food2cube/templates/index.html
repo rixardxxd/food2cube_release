@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="../static/mainSite/app/styles/main.css">
+  <link rel="stylesheet" href="http://localhost:5000/static/mainSite/app/styles/main.css">
+  <link href="http://localhost:5000/static/mainSite/app/styles/company-a.css" rel="stylesheet">
+
   <!-- endbuild -->
 </head>
 <body ng-app="food2cubeApp">
@@ -49,21 +51,25 @@
 
   <!-- modal -->
   <!-- signin -->
-  <div class="modal fade" id="signin">
+   <div class="modal fade" id="signin">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <form class="form-horizontal" role="form" ng-submit="doLogin()" ng-controller="LoginCtrl">
+          <form class="form-horizontal" role="form" ng-submit="doLogin()" ng-controller="LoginCtrl" name="login">
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
               <div class="col-lg-10">
-                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" ng-model="user.email">
+                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" ng-model="user.email" name="email" required>
+                <span class="error" ng-show="login.email.$dirty && login.email.$error.required">Required!</span>
+                <span class="error" ng-show="login.email.$dirty && login.email.$error.email">Not valid email!</span>
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword1" placeholder="Password" ng-model="user.password">
+                <input type="password" class="form-control" id="inputPassword1" placeholder="Password" ng-model="user.password" name="password" required>
+                <span class="error" ng-show="loginFailed">The username or password is not valid!</span>
+
               </div>
             </div>
             <div class="form-group">
@@ -77,7 +83,7 @@
             </div>
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
-                <button type="submit" class="btn btn-default">Sign in</button>
+                <button type="submit" class="btn btn-default" ng-disabled='login.$invalid'>Sign in</button>
               </div>
             </div>
           </form>
@@ -90,7 +96,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <form class="form-horizontal">
+          <form class="form-horizontal" role="form" ng-submit="doSignup()" ng-controller="SignupCtrl">
             <div class="form-group">
               <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
               <div class="col-lg-10">
