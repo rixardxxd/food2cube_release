@@ -247,12 +247,9 @@ LOGGING = {
         },
     }
 }
-<<<<<<< HEAD
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'app18955593@heroku.com'
 EMAIL_HOST_PASSWORD = 'kxh85oni'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-=======
->>>>>>> 5ed1feab45a1250a125b4afcc5c656605c4cd178
