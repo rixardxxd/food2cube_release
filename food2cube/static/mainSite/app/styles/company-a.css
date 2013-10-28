@@ -39,17 +39,17 @@ body {
 
 
 /*banner*/
-.banner {
+.company-banner {
     width: 100%;
-    padding: 20px 20% 20px 18%;
+    padding: 20px 24.8% 20px 23.2%;
     display: inline-block;
     background-color: #ff6666;
     color: #ffffff;
 }
-.banner h3, .banner h4 {
+.company-banner h3, .company-banner h4 {
     font-family: 'Quattrocento Sans', sans-serif;
 }
-.banner img {
+.company-banner img {
     width: 200px;
     height: 120px;
 }
@@ -60,7 +60,7 @@ body {
     height: 100%;
 }
 .choose-text {
-    margin-left: 10%;
+    margin-left: 11%;
     margin-top: 50px;
     margin-bottom: 40px;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .restaurants {
-    margin-left: 10%;
+    margin-left: 11%;
 }
 .restaurant {
     width: 300px;
@@ -108,4 +108,7 @@ body {
     top: 170px;
     color: #ffffff;
 }
-
+.view-container{
+max-width: 100%;
+padding: 0px;
+}
