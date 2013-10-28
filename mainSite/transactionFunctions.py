@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseServerError
 from mainSite.models import *
 import json
 import logging
+from utils import *
 log = logging.getLogger(__name__)
 from decimal import *
 
@@ -268,6 +269,8 @@ def placeBill(data):
     myTrans.restaurant_names="<+>".join(res_name)
     myTrans.save()
 
+    sendConfirmEmail(user_id, myTrans.id)
+
     return {'result':{'status':'success', 'message':''}}
 
 def verifyBill(bill):
@@ -290,5 +293,26 @@ def verifyBill(bill):
     return True
 
 def alertFault():
-
     return {'result':{'status':'failed', 'message':'Bill information doesn\'t match'}}
+
+
+template="Dear {0},\n" \
+         "We have received your order with following details:\n" \
+         "{1}\n" \
+         "Have good meal!\n" \
+         "\n" \
+         "Regards,\n" \
+         "food2cube"
+
+
+def sendConfirmEmail(user_id, transaction_id):
+
+    muser = MyUser.objects.get(id=user_id)
+    transaction = Transaction.objects.get(id=transaction_id)
+
+    email = muser.email
+    message = template.format(muser.first_name,"Total Amount : "+str(transaction.total_amount) )
+
+    log.info("Send Email to : {0}\n{1}".format(email, message))
+
+    return sendEmail(email,message)

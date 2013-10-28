@@ -1,0 +1,13 @@
+\dt
+
+DROP TABLE mainSite_company
+DROP TABLE mainSite_menu 
+DROP TABLE mainSite_myuser
+DROP TABLE mainSite_order
+DROP TABLE mainSite_order_restaurants
+DROP TABLE mainSite_orderline
+DROP TABLE mainSite_restaurant
+DROP TABLE mainSite_restaurant_nearby_company
+DROP TABLE mainSite_transaction
+DROP TABLE mainSite_transaction_restaurants
+

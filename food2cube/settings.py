@@ -117,6 +117,7 @@ INSTALLED_APPS = (
     'mainSite',
     'django.contrib.admin',
     'rest_framework',
+    'south'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

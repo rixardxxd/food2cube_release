@@ -1,0 +1,7 @@
+ABSPATH=$(cd "$(dirname "$0")"; pwd)
+TOP="$ABSPATH/.."
+PSQL="heroku pg:psql DATABASE_URL"
+
+cd ${TOP}
+${PSQL} -f ${ABSPATH}/DropTablesSQL
+heroku run ${ABSPATH}/reloadDB.remote

@@ -1,0 +1,19 @@
+ABSPATH=$(cd "$(dirname "$0")"; pwd)
+TOP="$ABSPATH/.."
+
+PSQL="heroku pg:psql DATABASE_URL"
+
+DB_NAME=food2cube
+DATA_SQL_FILE=$ABSPATH/TestDataSQL
+
+${PSQL} -f $DATA_SQL_FILE
+
+CHK=`${PSQL} -c 'select * from "mainSite_company";' | wc -l`
+
+if [ $CHK -eq 4 ]; then
+	echo "Database Table mainSite_company is still empty. Error may occured inserting data. Fix and retry."
+	exit 1
+fi
+echo "Insert Test Data into Database SUCCESS."
+
+
