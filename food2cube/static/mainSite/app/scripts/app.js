@@ -15,3 +15,12 @@ angular.module('food2cubeApp', ['ngRoute'])
         redirectTo: '/'
       });
   });
+
+/* TODO not sure if this is the correct place to add this code */
+/*
+$( document ).ready(function() {
+    if('http://localhost:5000/#/company/1'==window.location.href){
+	    $('body')[0].style.background="none";
+    }
+});
+*/

@@ -98,6 +98,9 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: Yes, always
         return True
 
+    def get_name(self):
+        return self.first_name + " " + self.last_name
+
     @property
     def is_staff(self):
         "Is the user a member of staff?"
@@ -123,6 +126,7 @@ class Company(models.Model):
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     phone_number = models.BigIntegerField()
+    email = models.EmailField(verbose_name='email address',max_length=255,unique=True,db_index=True)
     street = models.CharField(max_length=100,blank=True,default="",)
     city = models.CharField(max_length=100,blank=True,default="",)
     state = models.CharField(max_length=100,blank=True,default="",)
@@ -161,6 +165,7 @@ class Order(models.Model):
     order_lines_string = models.CharField(max_length=4096,blank=True,default="")
     order_time = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
+    confirmed = models.BooleanField(default=False)
     delivered = models.BooleanField(default = False)
 
     def __unicode__(self):
