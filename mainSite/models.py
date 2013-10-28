@@ -98,6 +98,9 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: Yes, always
         return True
 
+    def get_name(self):
+        return self.first_name + " " + self.last_name
+
     @property
     def is_staff(self):
         "Is the user a member of staff?"

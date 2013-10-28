@@ -117,7 +117,8 @@ INSTALLED_APPS = (
     'mainSite',
     'django.contrib.admin',
     'rest_framework',
-    'south'
+    'south',
+    'sendgrid'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -246,3 +247,9 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'app18955593@heroku.com'
+EMAIL_HOST_PASSWORD = 'kxh85oni'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
