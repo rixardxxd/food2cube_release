@@ -42,10 +42,10 @@ def landing(request):
     return render(request,'index.html')# Create your views here.
     #return make_response(open('templates/index.html').read())
     #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
-def testing(request):
 
-    #Prepare Data:
-    order_object = {
+
+#Prepare Data:
+order_object = {
         'user' : {  'user_id' : 1 },
         'company' : {   'company_id' : 1 },
         'order':
@@ -57,6 +57,35 @@ def testing(request):
                 ]
             }
     }
+
+def testing(request):
+
+    data = json.dumps(order_object, indent=4)
+    #raw_data = request.raw_post_data
+    raw_data = data
+
+    #Call out target function
+    try:
+        #print()
+        result1 = generateBillGateway(raw_data)
+
+        result1=json.loads(result1)
+        result1['user']={'user_id':1}
+        result1['company']={'company_id':1}
+
+        log.info("result1")
+        log.info(result1)
+        result1=json.dumps(result1)
+
+        result2 = placeBillGateway(result1)
+    except KeyError:
+        log.info("Malformed Data!!")
+        HttpResponseServerError("Malformed data!")
+
+    return HttpResponse(result2)
+
+def testemail(request):
+
     data = json.dumps(order_object, indent=4)
     #raw_data = request.raw_post_data
     raw_data = data

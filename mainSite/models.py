@@ -178,7 +178,7 @@ class OrderLine(models.Model):
     quantity = models.IntegerField(default=1)
 
     def __unicode__(self):
-        return self.menu.name + " X " + str(self.quantity)
+        return self.menu.name + " * " + str(self.quantity)
 
 
 class Transaction(models.Model):
