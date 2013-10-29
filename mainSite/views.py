@@ -2,13 +2,15 @@ from django.http import HttpResponse
 
 from django.shortcuts import render
 
-from mainSite.models import Restaurant,Company,Menu
+from mainSite.models import *
 
 from rest_framework import generics
 
 from mainSite.serializers import CompanySerializer,RestaurantSerializer
 
 from food2cube.settings import BASE_DIR
+
+from mainSite.transactionFunctions import *
 
 
 import logging
@@ -42,7 +44,44 @@ def landing(request):
     #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
 def testing(request):
 
-    return HttpResponse("You're looking at the results of poll.")
+    #Prepare Data:
+    order_object = {
+        'user' : {  'user_id' : 1 },
+        'company' : {   'company_id' : 1 },
+        'order':
+            {
+                'items':[
+                    {   'menu_id':1, 'restaurant_id':1, 'amount':2, 'menu_name':'Kens Fried Chicken'},
+                    {   'menu_id':2, 'restaurant_id':1, 'amount':2, 'menu_name':'Kens Fried Duck'},
+                    {   'menu_id':1, 'restaurant_id':1, 'amount':3, 'menu_name':'Kens Fried Chicken'},
+                ]
+            }
+    }
+    data = json.dumps(order_object, indent=4)
+    #raw_data = request.raw_post_data
+    raw_data = data
+
+    #Call out target function
+    try:
+        #print()
+        result1 = generateBillGateway(raw_data)
+
+        result1=json.loads(result1)
+        result1['user']={'user_id':1}
+        result1['company']={'company_id':1}
+
+        log.info("result1")
+        log.info(result1)
+        result1=json.dumps(result1)
+
+        result2 = placeBillGateway(result1)
+    except KeyError:
+        log.info("Malformed Data!!")
+        HttpResponseServerError("Malformed data!")
+
+    return HttpResponse(result2)
+
+    #return precalculateTotalPrice(request)
 
 # def getRestaurantAndMenuFromCompany(request):
 #

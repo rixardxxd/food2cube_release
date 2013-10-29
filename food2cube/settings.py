@@ -117,6 +117,8 @@ INSTALLED_APPS = (
     'mainSite',
     'django.contrib.admin',
     'rest_framework',
+    'south',
+    'sendgrid'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -158,7 +160,9 @@ AUTH_USER_MODEL = 'mainSite.MyUser'
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+
 DATABASES['default'] =  dj_database_url.config(default='postgres://amityw@localhost/food2cube')
+
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -245,3 +249,9 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'app18955593@heroku.com'
+EMAIL_HOST_PASSWORD = 'kxh85oni'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
