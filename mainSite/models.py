@@ -4,8 +4,8 @@ from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 #This is the model class
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email,first_name,last_name,phone_number,company,
-                        password,middle_name="",street="", city="",state="",zip_code=0,):
+    def create_user(self, email,first_name,last_name,phone_number,
+                        password,company="",middle_name="",street="", city="",state="",zip_code=0,):
 
         if not email:
             raise ValueError('Users must have an email address')
@@ -28,8 +28,8 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-    def create_superuser(self, email,first_name,last_name,phone_number,company,
-                        password,middle_name="",street="", city="",state="",zip_code=0,):
+    def create_superuser(self, email,first_name,last_name,phone_number,
+                        password,company="",middle_name="",street="", city="",state="",zip_code=0,):
 
         if not email:
             raise ValueError('Users must have an email address')
@@ -68,14 +68,14 @@ class MyUser(AbstractBaseUser):
     city = models.CharField(max_length=100,blank=True,default="",)
     state = models.CharField(max_length=100,blank=True,default="",)
     zip_code = models.IntegerField(blank=True,default=0,)
-    company = models.CharField(max_length=100)
+    company = models.CharField(max_length=100,blank=True,default="",)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['phone_number','first_name','last_name','company',]
+    REQUIRED_FIELDS = ['phone_number','first_name','last_name']
 
     def get_full_name(self):
         # The user is identified by their email address
