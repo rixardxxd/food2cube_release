@@ -42,10 +42,10 @@ def landing(request):
     return render(request,'index.html')# Create your views here.
     #return make_response(open('templates/index.html').read())
     #return  send_file(BASE_DIR + 'static/mainSite/app/index.html')
-def testing(request):
 
-    #Prepare Data:
-    order_object = {
+
+#Prepare Data:
+order_object = {
         'user' : {  'user_id' : 1 },
         'company' : {   'company_id' : 1 },
         'order':
@@ -57,6 +57,9 @@ def testing(request):
                 ]
             }
     }
+
+def testing(request):
+
     data = json.dumps(order_object, indent=4)
     #raw_data = request.raw_post_data
     raw_data = data
@@ -80,6 +83,10 @@ def testing(request):
         HttpResponseServerError("Malformed data!")
 
     return HttpResponse(result2)
+
+def testemail(request):
+
+    return 1
 
     #return precalculateTotalPrice(request)
 

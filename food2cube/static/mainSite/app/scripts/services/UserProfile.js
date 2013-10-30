@@ -38,22 +38,25 @@ angular.module('food2cubeApp')
           return deferred.promise;
       },
 
-        doSignup: function(data,callback){
+      doSignup: function (data){
+            var deferred = $q.defer();
+
             $http({
                 method : 'POST',
-                url : '/api/signup',
+                url : '/api/signup/',
                 data: data
             }).success(function (data,status,headers,config){
                     signedup = true;
-                    callback(signedup);
+                    deferred.resolve(data);
             }).error(function (data, status, headers, config) {
             //TODO: Show error message
                     signedup = false;
-                    callback(signedup);
+                    deferred.reject(data);
 
 
             });
 
+            return deferred.promise;
         }
 
     };

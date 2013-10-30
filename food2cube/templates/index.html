@@ -100,39 +100,41 @@
             <div class="form-group">
               <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
               <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputFirstName">
+                <input type="text" class="form-control" id="inputFirstName" ng-model="signupuser.firstname">
               </div>
             </div>
             <div class="form-group">
               <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
               <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputLastName">
+                <input type="text" class="form-control" id="inputLastName" ng-model="signupuser.lastname">
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
               <div class="col-lg-10">
-                <input type="email" class="form-control" id="inputEmail">
+                <input type="email" class="form-control" id="inputEmail" ng-model="signupuser.email">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPhone" class="col-lg-2 control-label">Phone Number</label>
               <div class="col-lg-10">
-                <input type="tel" class="form-control" id="inputPhone">
+                <input type="tel" class="form-control" id="inputPhone" ng-model="signupuser.phone">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="col-lg-2 control-label">Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword">
+                <input type="password" class="form-control" id="inputPassword" ng-model="signupuser.password1">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPasswordConfirm" class="col-lg-2 control-label">Confirm Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPasswordConfirm">
+                <input type="password" class="form-control" id="inputPasswordConfirm" password-match="signupuser.password1" ng-model="signupuser.password2">
               </div>
             </div>
+             <span class="error" ng-show="emailalreadyexists">The email already exits. Please log in.</span>
+
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
                 <button type="submit" class="btn btn-default">Sign up</button>
@@ -160,6 +162,8 @@
   <script src="static/mainSite/app/scripts/controllers/Login.js"></script>
   <script src="static/mainSite/app/scripts/services/UserProfile.js"></script>
   <script src="static/mainSite/app/scripts/services/Company.js"></script>
+  <script src="static/mainSite/app/scripts/directives/passwordMatch.js"></script>
+
   <!-- endbuild -->
 </body>
 </html>

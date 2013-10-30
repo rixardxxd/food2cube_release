@@ -6,8 +6,12 @@ from django.contrib.auth import authenticate,login,logout
 
 from mainSite.models import MyUser
 
+from django.db import IntegrityError
+
 import json
 
+import logging
+log = logging.getLogger(__name__)
 
 def login_user(request):
 
@@ -46,20 +50,39 @@ def login_user(request):
 
 def signup_user(request):
 
-    email = request.POST['email']
-    password = request.POST['password']
-    first_name = request.POST['first_name']
-  #  middle_name = request.POST['middle_name']
-    last_name = request.POST['last_name']
-    phone_number = request.POST['phone_number']
-  #  street = request.POST['street']
-  # city = request.POST['city']
-  #  state = request.POST['state']
-  #  zip_code = request.POST['zip_code']
-    company = request.POST['company']
+    json_data = json.loads(request.raw_post_data)
+    email = ''
+    password = ''
+    firstname = ''
+    lastname = ''
+    phone = ''
+    try:
+        email = json_data['email']
+        password1 = json_data['password1']
+        password2 = json_data['password2']
+        firstname = json_data['firstname']
+        lastname = json_data['lastname']
+        phone = json_data['phone']
+    except KeyError:
+        return HttpResponseServerError("Malformed data!")
+    if password1 != password2:
+        return HttpResponseServerError("Two password does not match!")
 
-    user = MyUser.objects.create_user(email=email,first_name=first_name,last_name=last_name,phone_number=phone_number,
-                                      company=company,password=password)
+    log.info(email + '')
+    log.info(password1 + '')
+    log.info(firstname + '')
+    log.info(lastname + '')
+    log.info(phone  + '')
+
+    try:
+        user = MyUser.objects.create_user(email=email,first_name=firstname,last_name=lastname,phone_number=phone,
+                                      password=password2)
+    except IntegrityError as e:
+        return HttpResponseServerError(e.message)
+    except Exception as e:
+        return HttpResponseServerError(e.message)
+
+
     if user is not None:
         return HttpResponse()
     else:
