@@ -86,29 +86,7 @@ def testing(request):
 
 def testemail(request):
 
-    data = json.dumps(order_object, indent=4)
-    #raw_data = request.raw_post_data
-    raw_data = data
-
-    #Call out target function
-    try:
-        #print()
-        result1 = generateBillGateway(raw_data)
-
-        result1=json.loads(result1)
-        result1['user']={'user_id':1}
-        result1['company']={'company_id':1}
-
-        log.info("result1")
-        log.info(result1)
-        result1=json.dumps(result1)
-
-        result2 = placeBillGateway(result1)
-    except KeyError:
-        log.info("Malformed Data!!")
-        HttpResponseServerError("Malformed data!")
-
-    return HttpResponse(result2)
+    return 1
 
     #return precalculateTotalPrice(request)
 
