@@ -7,7 +7,7 @@ angular.module('food2cubeApp')
       return [
 
         {id: 1, name: 'Oracle', img: 'static/mainSite/app/img/oracle.jpg'},
-        {id: 2, name: 'Yahoo', img: 'static/mainSite/app/img/yahoo.png'}
+        {id: 2, name: 'Yahoo', img: 'static/mainSite/app/img/oracle.jpg'}
       ];
     };
     return items;
