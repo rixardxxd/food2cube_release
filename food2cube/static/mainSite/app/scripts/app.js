@@ -4,6 +4,7 @@ angular.module('food2cubeApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+
         templateUrl: 'static/mainSite/app/views/main.html',
         controller: 'MainCtrl'
       })

@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('food2cubeApp').
-directive('passwordMatch', [function () {
+angular.module('food2cubeApp').directive('passwordMatch', [function () {
     return {
         restrict: 'A',
         scope:true,
