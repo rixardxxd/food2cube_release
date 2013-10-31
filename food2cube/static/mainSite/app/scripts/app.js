@@ -11,6 +11,10 @@ angular.module('food2cubeApp', ['ngRoute'])
         templateUrl: 'static/mainSite/app/views/company.html',
         controller: 'CompanyCtrl'
       })
+      .when('/checkout', {
+        templateUrl: 'static/mainSite/app/views/checkout.html',
+        controller: 'CheckoutCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
