@@ -66,7 +66,7 @@ def signup_user(request):
     except KeyError:
         return HttpResponseServerError("Malformed data!")
     if password1 != password2:
-        return HttpResponseServerError("Two password does not match!")
+        return HttpResponseServerError("Two passwords does not match!")
 
     log.info(email + '')
     log.info(password1 + '')

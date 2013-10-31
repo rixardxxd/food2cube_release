@@ -96,7 +96,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <form class="form-horizontal" role="form" ng-submit="doSignup()" ng-controller="SignupCtrl">
+          <form class="form-horizontal" role="form" ng-submit="doSignup()" ng-controller="SignupCtrl" name="signup">
             <div class="form-group">
               <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
               <div class="col-lg-10">
@@ -124,20 +124,22 @@
             <div class="form-group">
               <label for="inputPassword" class="col-lg-2 control-label">Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword" ng-model="signupuser.password1">
+                <input type="password" class="form-control" id="inputPassword" ng-model="signupuser.password1" name="password1">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPasswordConfirm" class="col-lg-2 control-label">Confirm Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPasswordConfirm" password-match="signupuser.password1" ng-model="signupuser.password2">
+                <input type="password" class="form-control" id="inputPasswordConfirm"  password-match="signupuser.password1" ng-model="signupuser.password2" name="password2">
               </div>
+              <span class="error" ng-show="signup.password2.$error.unique">The passwords doesn't match. Please retype.</span>
+
             </div>
              <span class="error" ng-show="emailalreadyexists">The email already exits. Please log in.</span>
 
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
-                <button type="submit" class="btn btn-default">Sign up</button>
+                <button type="submit" class="btn btn-default" ng-disabled="signup.password2.$error.unique">Sign up</button>
               </div>
             </div>
           </form>
