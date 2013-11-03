@@ -39,12 +39,12 @@
 </div>
 
 -->
-
+<!--
 <div class="container">
     <div class="choose-text">
         <h3>What do you want for lunch?</h3>
     </div>
- <div class="restaurants">
+<div class="restaurants">
 
     <div ng-repeat="restaurantgroup in restaurants">
         <div class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
@@ -57,7 +57,26 @@
   </div>
 </div>
 
+-->
 
+<div class="container">
+    <div class="choose-text">
+        <h3>What do you want for lunch?</h3>
+    </div>
+<div class="restaurants">
+
+    <table>
+    <tr ng-repeat="restaurantgroup in restaurants">
+        <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
+        <a class="restaurant" data-toggle="modal">
+          <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
+           <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
+        </a>
+        </td>
+    </tr>
+     </table>
+  </div>
+</div>
 
 <!--modal-->
 <!--menu-->
