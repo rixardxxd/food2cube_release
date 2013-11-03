@@ -11,11 +11,16 @@ angular.module('food2cubeApp', ['ngRoute'])
       .when('/company/:companyName', {
         templateUrl: 'static/mainSite/app/views/restaurant.html',
         controller: 'RestaurantCtrl'
+
+        })
+      .when('/checkout', {
+        templateUrl: 'static/mainSite/app/views/checkout.html',
+        controller: 'CheckoutCtrl'
       })
       .otherwise({
         redirectTo: '/'
-      });
-  });
+       });
+    });
 
 /* TODO not sure if this is the correct place to add this code */
 /*
