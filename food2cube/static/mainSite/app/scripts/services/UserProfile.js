@@ -5,8 +5,7 @@ angular.module('food2cubeApp')
     var loggedIn = false;
     var loggedInFailed = false;
     var signedup = false;
-    var firstName;
-    var lastName;
+
 
     return {
       isLoggedIn: function () {
