@@ -68,7 +68,7 @@
     <table>
     <tr ng-repeat="restaurantgroup in restaurants">
         <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
-        <a class="restaurant" data-toggle="modal">
+        <a class="restaurant" data-toggle="modal" data-target="#menu">
           <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
            <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
         </a>
