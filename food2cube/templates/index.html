@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="static/mainSite/app/styles/main.css">
-  <link href="static/mainSite/app/styles/company-a.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/mainSite/app/styles/company.css">
+  <link href="static/mainSite/app/styles/restaurant.css" rel="stylesheet">
 
   <!-- endbuild -->
 </head>
@@ -55,11 +55,11 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <form class="form-horizontal" role="form" ng-submit="doLogin()" ng-controller="LoginCtrl" name="login">
+          <form class="form-horizontal" role="form" ng-submit="doLogin()" ng-controller="LoginCtrl" name="login" autocomplete = "off">
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
               <div class="col-lg-10">
-                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" ng-model="user.email" name="email" required>
+                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" ng-model="user.email" name="email" required auto-fill-sync>
                 <span class="error" ng-show="login.email.$dirty && login.email.$error.required">Required!</span>
                 <span class="error" ng-show="login.email.$dirty && login.email.$error.email">Not valid email!</span>
               </div>
@@ -67,7 +67,7 @@
             <div class="form-group">
               <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword1" placeholder="Password" ng-model="user.password" name="password" required>
+                <input type="password" class="form-control" id="inputPassword1" placeholder="Password" ng-model="user.password" name="password" required auto-fill-sync>
                 <span class="error" ng-show="loginFailed">The username or password is not valid!</span>
 
               </div>
@@ -100,46 +100,66 @@
             <div class="form-group">
               <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
               <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputFirstName" ng-model="signupuser.firstname">
+                <input type="text" class="form-control" id="inputFirstName" ng-model="signupuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                 <span class="error" ng-show="signup.firstname.$error.required">Required!</span>
+                 <span class="error" ng-show="signup.firstname.$invalid">Must be characters!</span>
+
+
               </div>
             </div>
             <div class="form-group">
               <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
               <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputLastName" ng-model="signupuser.lastname">
+                <input type="text" class="form-control" id="inputLastName" ng-model="signupuser.lastname" name="lastname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                <span class="error" ng-show="signup.lastname.$error.required">Required!</span>
+                <span class="error" ng-show="signup.lastname.$invalid">Must be characters!</span>
+
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
               <div class="col-lg-10">
-                <input type="email" class="form-control" id="inputEmail" ng-model="signupuser.email">
+                <input type="email" class="form-control" id="inputEmail" ng-model="signupuser.email" name="email" required>
+                <span class="error" ng-show="signup.email.$error.required">Required!</span>
+                <span class="error" ng-show="signup.email.$error.email">Not a valid email address!</span>
+
+
               </div>
             </div>
             <div class="form-group">
               <label for="inputPhone" class="col-lg-2 control-label">Phone Number</label>
               <div class="col-lg-10">
-                <input type="tel" class="form-control" id="inputPhone" ng-model="signupuser.phone">
+                <input type="tel" class="form-control" id="inputPhone" ng-model="signupuser.phone" name="phone" required ng-pattern="/^[0-9]+$/"/>
+                <span class="error" ng-show="signup.phone.$error.required">Required!</span>
+                <span class="error" ng-show="signup.phone.$invalid">Not a valid phone number!</span>
+
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="col-lg-2 control-label">Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword" ng-model="signupuser.password1" name="password1">
+                <input type="password" class="form-control" id="inputPassword" ng-model="signupuser.password1" name="password1" required>
+                <span class="error" ng-show="signup.password1.$error.required">Required!</span>
+
               </div>
             </div>
             <div class="form-group">
               <label for="inputPasswordConfirm" class="col-lg-2 control-label">Confirm Password</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPasswordConfirm"  password-match="signupuser.password1" ng-model="signupuser.password2" name="password2">
+                <input type="password" class="form-control" id="inputPasswordConfirm"  password-match="signupuser.password1" ng-model="signupuser.password2" name="password2" required>
+                <span class="error" ng-show="signup.password2.$error.required">Required!</span>
+
               </div>
               <span class="error" ng-show="signup.password2.$error.unique">The passwords doesn't match. Please retype.</span>
 
             </div>
              <span class="error" ng-show="emailalreadyexists">The email already exits. Please log in.</span>
+             <span class="error" ng-show="servererrorexists">Some form data is not corrected. Please check and retype.</span>
+
 
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
-                <button type="submit" class="btn btn-default" ng-disabled="signup.password2.$error.unique">Sign up</button>
+                <button type="submit" class="btn btn-default" ng-disabled="signup.password2.$error.unique || signup.$invalid">Sign up</button>
               </div>
             </div>
           </form>
@@ -159,11 +179,12 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="static/mainSite/app/scripts/app.js"></script>
-  <script src="static/mainSite/app/scripts/controllers/main.js"></script>
+  <script src="static/mainSite/app/scripts/controllers/restaurant.js"></script>
   <script src="static/mainSite/app/scripts/controllers/company.js"></script>
   <script src="static/mainSite/app/scripts/controllers/Login.js"></script>
   <script src="static/mainSite/app/scripts/services/UserProfile.js"></script>
   <script src="static/mainSite/app/scripts/services/Company.js"></script>
+  <script src="static/mainSite/app/scripts/services/Restaurant.js"></script>
   <script src="static/mainSite/app/scripts/directives/passwordMatch.js"></script>
 
   <!-- endbuild -->

@@ -51,11 +51,15 @@ angular.module('food2cubeApp')
               $scope.emailalreadyexists = true;
 
               }
+              else{
+              $scope.servererrorexists = true;
+              }
           }
       );
 
     };
 
     $scope.emailalreadyexists = false;
+    $scope.servererrorexists = false;
 
   }]);

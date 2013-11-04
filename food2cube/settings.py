@@ -156,7 +156,9 @@ AUTH_USER_MODEL = 'mainSite.MyUser'
 import dj_database_url
 
 
+
 DATABASES['default'] =  dj_database_url.config(default='postgres://'+developer+'@localhost/food2cube')
+
 
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 

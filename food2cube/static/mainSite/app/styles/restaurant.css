@@ -39,17 +39,17 @@ body {
 
 
 /*banner*/
-.company-banner {
+.restaurant-banner {
     width: 100%;
     padding: 20px 24.8% 20px 23.2%;
     display: inline-block;
     background-color: #ff6666;
     color: #ffffff;
 }
-.company-banner h3, .company-banner h4 {
+.restaurant-banner h3, .restaurant-banner h4 {
     font-family: 'Quattrocento Sans', sans-serif;
 }
-.company-banner img {
+.restaurant-banner img {
     width: 200px;
     height: 120px;
 }
@@ -111,4 +111,8 @@ body {
 .view-container{
 max-width: 100%;
 padding: 0px;
+}
+
+.restaurant-column{
+    /*float:left;*/
 }
