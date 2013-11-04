@@ -82,7 +82,6 @@ def signup_user(request):
     except Exception as e:
         return HttpResponseServerError(e.message)
 
-
     if user is not None:
         return HttpResponse()
     else:

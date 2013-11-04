@@ -18,7 +18,6 @@ class FaultTransactionException(Exception):
         self.message = message
 
 
-
 """
 Incoming order Jason object format
 {
@@ -54,7 +53,6 @@ Incoming order Jason object format
     ...
 }
 """
-
 
 
 """
@@ -270,7 +268,6 @@ def placeBill(data):
     myTrans.save()
 
     sendConfirmEmail(user_id, myTrans.id, myOrder.id)
-
     return {'result':{'status':'success', 'message':''}}
 
 def verifyBill(bill):
