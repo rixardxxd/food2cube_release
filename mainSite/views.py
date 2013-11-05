@@ -12,10 +12,8 @@ from food2cube.settings import BASE_DIR
 
 from mainSite.transactionFunctions import *
 
-
 import logging
 log = logging.getLogger(__name__)
-
 
 
 class ListCompanies(generics.ListAPIView):
@@ -101,10 +99,6 @@ def testemail(request):
 #     print(restaurants)
 #
 #     return HttpResponse(menus)
-    # response_data = {}
-    # response_data['company'] = company
-    # response_data['restaurant'] =
-
-
-
-
+# response_data = {}
+# response_data['company'] = company
+# response_data['restaurant'] = restaurant
