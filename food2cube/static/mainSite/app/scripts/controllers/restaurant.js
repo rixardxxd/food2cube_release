@@ -29,7 +29,7 @@
                 $scope.open = function () {
 
                 var modalInstance = $modal.open({
-                  templateUrl: '/static/mainSite/app/views/myModalContent.html',
+                  templateUrl: '/static/mainSite/app/templates/myModalContent.html',
                   controller: ModalInstanceCtrl,
                   resolve: {
                     items: function () {
