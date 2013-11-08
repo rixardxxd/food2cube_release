@@ -3,9 +3,9 @@
 angular.module('food2cubeApp')
   .factory('Checkout', function ()
   {
-    var items = {};
+    var functions = {};
 
-    items.query = function()
+    functions.queryTestData = function()
     {
       return [
         {id: 1, name: 'Ken\'s Fried Chicken', price: 1  , amount: 1 },
@@ -13,5 +13,19 @@ angular.module('food2cubeApp')
       ];
     };
 
-    return items;
+    //temporary not used
+    functions.updateAmount = function(items,id, amount)
+    {
+        var item;
+        for (item in items)
+        {
+            if(item.id == id)
+            {
+                item.amount = amount;
+                break;
+            }
+        }
+    };
+
+    return functions;
   });
