@@ -57,7 +57,7 @@
 
 -->
 
-<div class="container">
+<div class="container" >
     <div class="choose-text">
         <h3>What do you want for lunch?</h3>
     </div>
@@ -66,7 +66,7 @@
 
         <tr ng-repeat="restaurantgroup in restaurants">
             <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
-                <a class="restaurant" data-toggle="modal" data-target="#menu">
+                <a class="restaurant"  ng-click="open()">
                     <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
                     <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
                 </a>
@@ -78,16 +78,55 @@
     <br>
     </div>
 
-</div>
+
 
 <!--modal-->
 <!--menu-->
+
+<!--
+<script type="text/ng-template" id="myModalContent.html">
 <div class="modal fade" id="menu">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                hello
+                <table>
+                    <tr>
+                    {{ restaurant.name }}
+                    </tr>
+                    <tr ng-repeat="menu in restaurant.menus">
+                        {{ menu.name }}
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
+</div>
+</script>
+
+-->
+
+
+<div >
+    <script type="text/ng-template" id="myModalContent">
+        <div class="modal-header">
+            <h3>I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn" ng-click="open()">Open me!</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>
+
 </div>

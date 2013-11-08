@@ -6,8 +6,6 @@ angular.module('food2cubeApp')
         {
             $scope.items = Checkout.query();
 
-            console.log("items = ");
-            console.log($scope.items);
 
         }
     ]);
