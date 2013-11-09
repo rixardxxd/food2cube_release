@@ -149,12 +149,10 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 #         },
 #     }
 # }
-
 AUTH_USER_MODEL = 'mainSite.MyUser'
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-
 
 
 DATABASES['default'] =  dj_database_url.config(default='postgres://'+developer+'@localhost/food2cube')
@@ -174,7 +172,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates")
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    # Don't forget to use absolute paths, not relative paths.p
 )
 
 LOGGING = {

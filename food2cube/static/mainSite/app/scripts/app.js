@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('food2cubeApp', ['ngRoute'])
+angular.module('food2cubeApp', ['ngRoute','ui.bootstrap'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

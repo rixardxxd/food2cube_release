@@ -1,13 +1,50 @@
 
-<!--ShoppingCartContent-->
+
 <div>
-    <ul>
-        <form>
-            <li ng-repeat="item in items">
-                {{item.name}}
-                {{item.price}}
-                <input type="button" value="<<"/> <input type="text" value="{{item.amount}}"/> <input type="button" value=">>">
-            </li>
-        </form>
-    </ul>
+    <div><!--ShoppingCartContent-->
+            <table class="shopping-cart">
+            <tr>
+                <th>
+                    <a href="" ng-click="predicate = 'name'; reverse=!reverse">Item Name</a>
+                </th>
+                <th>
+                    <a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a>
+                </th>
+                <th>
+                    <a href="" ng-click="predicate = 'amount'; reverse=!reverse">Amount</a>
+                </th>
+            </tr>
+            <tr ng-repeat="item in items | orderBy:predicate:reverse">
+                <td>  {{item.name}}  </td>
+                <td>  {{item.price | currency:"$"}}  </td>
+                <td>
+                    <input type="button" value="<<" ng-click="item.amount = (item.amount>0)?item.amount-1:0" />
+                    {{ item.amount }}
+                    <input type="button" value=">>" ng-click="item.amount = item.amount+1" />
+                </td>
+            </tr>
+
+            </table>
+    </div>
+
+    <div><!--CheckoutPanel-->
+            <a data-toggle="modal" data-target="#bill">Proceed to Checkout</a>
+    </div>
+
+    <div><!--DebugPanel-->
+        <p>Debug:</p>
+        <p>{{ items | json }}</p>
+
+    </div>
+
+    <!--bill-->
+    <div class="modal fade" id="bill">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Bill Detail:
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

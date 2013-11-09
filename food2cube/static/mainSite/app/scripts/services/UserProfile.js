@@ -56,7 +56,7 @@ angular.module('food2cubeApp')
             });
 
             return deferred.promise;
-        }
+       }
 
     };
   }]);
