@@ -1,5 +1,5 @@
 <!--banner-->
-<div class="restaurant-banner">
+<div class="banner">
     <div class="pull-left">
         <h3>No Deliever Fee</h3>
         <h4>No Minimum Order</h4>
@@ -63,19 +63,18 @@
     <div class="choose-text">
         <h3>What do you want for lunch?</h3>
     </div>
-<div class="restaurants">
-
-    <table>
-    <tr ng-repeat="restaurantgroup in restaurants">
-        <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
-        <a class="restaurant" data-toggle="modal" data-target="#menu">
-          <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
-           <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
-        </a>
-        </td>
-    </tr>
-     </table>
-  </div>
+    <div class="restaurants">
+        <table>
+            <tr ng-repeat="restaurantgroup in restaurants">
+                <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
+                    <a class="restaurant" data-toggle="modal" data-target="#menu">
+                        <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
+                        <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 <!--modal-->
@@ -89,5 +88,3 @@
         </div>
     </div>
 </div>
-
-
