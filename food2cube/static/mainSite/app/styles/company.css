@@ -1,5 +1,6 @@
-.container {
-    background: url('../img/bg.jpg') no-repeat top center;
+.company-bg {
+    background: url('/static/mainSite/app/img/bg.jpg') no-repeat top center;
+    background-size: cover;
 }
 
 .companies {
