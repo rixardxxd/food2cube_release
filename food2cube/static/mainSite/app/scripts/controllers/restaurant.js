@@ -4,20 +4,22 @@
 
 
 
-    angular.module('food2cubeApp').controller('RestaurantCtrl', ['$scope', '$modal','$log', function ($scope,$modal,$log) {
-                var menu1 =
-        {id: 100, name: 'eg1', category: 'Chinese', description: '',img: 'static/mainSite/app/img/eg1.png',
-            price: '8.5'
+    angular.module('food2cubeApp').controller('RestaurantCtrl', ['$scope', '$modal','$log','Menu','$location', function ($scope,$modal,$log,Menu,$location) {
 
-        };
-
-                var menu2 =   {id: 101, name: 'eg2',category: 'Japanese', img: 'static/mainSite/app/img/eg2.png',
-            price: '8.75'
-        };
-                $scope.menu1 = menu1;
-                $scope.menu2 = menu2;
+                $scope.menu1 = Menu.getMenu1();
+                $log.info(Menu.getMenu1());
+                $scope.menu2 = Menu.getMenu2();
                 $scope.order1 = 0;
                 $scope.order2 = 0;
+
+                $scope.goBack = function ( path ) {
+                    $location.path( path );
+                };
+                $scope.proceed = function ( path ) {
+                    Menu.setOrder1($scope.order1);
+                    Menu.setOrder2($scope.order2);
+                    $location.path( path );
+                };
 
 
 

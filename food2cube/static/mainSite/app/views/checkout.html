@@ -17,13 +17,25 @@
                 <td>  {{item.name}}  </td>
                 <td>  {{item.price | currency:"$"}}  </td>
                 <td>
-                    <input type="button" value="<<" ng-click="item.amount = (item.amount>0)?item.amount-1:0" />
+                    <input type="button" value="<<" ng-click="item.amount = (item.amount>0)?item.amount-1:0;doUpdateAmount();" />
                     {{ item.amount }}
-                    <input type="button" value=">>" ng-click="item.amount = item.amount+1" />
+                    <input type="button" value=">>" ng-click="item.amount = item.amount+1;doUpdateAmount();" />
                 </td>
             </tr>
 
+
+
             </table>
+
+              <div class="btn-group">
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0" ng-click="tips = 0;doUpdateAmount();">0%</button>
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.1" ng-click="tips = 0.1;doUpdateAmount();">10%</button>
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.15" ng-click="tips = 0.15;doUpdateAmount();">15%</button>
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.2" ng-click="tips = 0.2;doUpdateAmount();">20%</button>
+
+               </div>
+                <p>Total Amount:</p>
+                <p> {{ totalAmount }}</p>
     </div>
 
     <div><!--CheckoutPanel-->

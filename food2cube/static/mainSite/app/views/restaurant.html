@@ -1,5 +1,4 @@
-<!--banner-->
-<div class="restaurant-banner">
+<div class="banner">
     <div class="pull-left">
         <h3>No Deliever Fee</h3>
         <h4>No Minimum Order</h4>
@@ -39,41 +38,11 @@
     </div>
 
 
-    <a href="#/"> Go back to companies</a>
-    <a href="#/checkout"   ng-click="open()" ng-show="order1 >0 || order2 > 0"> Check Out </a>
+
+    <button class="btn btn-primary" ng-click="goBack('/');">Go back to companies</button>
 
 
-
-<!--
-<div class="container" >
-    <div class="choose-text">
-        <h3>What do you want for lunch?</h3>
-    </div>
-    <div class="restaurants">
-    <table>
-
-        <tr ng-repeat="restaurantgroup in restaurants">
-            <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
-                <a class="restaurant">
-                    <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
-                    <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
-
-                      Add to chart:   <input type="button" value="<<" ng-click="restaurant.amount = (restaurant.amount>0)?order1.amount-1:0" />
-                    {{ restaurant.amount}}
-                <input type="button" value=">>" ng-click="restaurant.amount = restaurant.amount+1" />
-
-                </a>
-
-
-            </td>
-        </tr>
-    </table>
-    <a href="#/"> Go back to companies</a>
-    <a href="#/checkout"   ng-click="open()"> Check Out </a>
-    <br>
-    </div>
-
--->
+    <button class="btn btn-primary" ng-click="proceed('/checkout');"  ng-show="order1 >0 || order2 > 0">Check Out</button>
 
 
 
@@ -87,7 +56,7 @@
                 <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.price }}*{{ order1 }}</h5>
                 <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.price }}*{{ order2 }}</h5>
 
-                   <pre>{{tips}}</pre>
+
                 <div class="btn-group">
                      <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0'">0%</button>
                      <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.1'">10%</button>

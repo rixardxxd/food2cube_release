@@ -1,17 +1,19 @@
-<div class="landing">
-  <div class="banner">
-    <h3>Deliver lunch to your company !</h3>
-  </div>
-  <div class="companies">
+<div class="banner">
+    <div class="pull-left">
+        <h3>No Deliver Fee</h3>
+        <h4>No Minimum Order</h4>
+    </div>
+</div>
+
+<div class="container company-bg">
     <div class="choose-text">
-      <h4>Where are you working ?</h4>
+        <h3>Where are you working ?</h3>
     </div>
-    <div class="col-md-6" ng-repeat="company in companies">
-      <center>
-        <a href="#/company/{{company.id}}" class="company" ng-click>
-          <img alt="{{company.name}}" ng-src="{{company.img}}">
-        </a>
-      </center>
+    <div class="companies">
+        <div class="col-md-6" ng-repeat="company in companies">
+            <a href="#/company/{{company.id}}" class="company" ng-click>
+                <img alt="{{company.name}}" ng-src="{{company.img}}">
+            </a>
+        </div>
     </div>
-  </div>
 </div>
