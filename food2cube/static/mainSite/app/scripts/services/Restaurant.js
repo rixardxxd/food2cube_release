@@ -8,24 +8,28 @@ angular.module('food2cubeApp')
             {name:'aaa1',price:'5'},
             {name:'bbb1',price:'6'}
 
-        ]
+        ],
+            amount:0
 
         },
         {id: 101, name: 'eg2',category: 'Japanese', img: 'static/mainSite/app/img/eg2.png',menus:[
             {name:'aaa2',price:'5'},
             {name:'bbb2',price:'6'}
-        ]
+        ],
+            amount:0
         },
         {id: 102, name: 'eg3', category: 'Indian', img: 'static/mainSite/app/img/eg3.png',menus:[
             {name:'aaa3',price:'5'},
             {name:'bbb3',price:'6'}
-        ]
+        ],
+            amount:0
         },
         {id: 103, name: 'eg4',category: 'Japanese', img: 'static/mainSite/app/img/eg4.png',
         menus:[
             {name:'aaa4',price:'5'},
             {name:'bbb4',price:'6'}
-           ]
+           ],
+            amount:0
         }
 
     ];

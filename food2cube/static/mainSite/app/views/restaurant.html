@@ -7,56 +7,44 @@
     <img class="pull-right" src="static/mainSite/app/img/banner1.png">
 </div>
 
-<!-- content
+
 <div class="container">
     <div class="choose-text">
         <h3>What do you want for lunch?</h3>
     </div>
     <div class="restaurants">
         <div class="restaurant-row">
-            <a href="#menu" class="restaurant" id="eg1" data-toggle="modal">
-                <img alt="eg1" class="restaurant-pic" src="static/mainSite/app/img/eg1.png">
-                <h5 class="text-center strong">QQ Noodle<br>Chinese</h5>
-            </a>
-            <a href="#menu" class="restaurant" id="eg2" data-toggle="modal">
-                <img alt="eg2" class="restaurant-pic" src="static/mainSite/app/img/eg2.png">
-                <h5 class="text-center strong">eg2<br>Japanese</h5>
-            </a>
-        </div>
-        <div class="restaurant-row">
-            <a href="#menu" class="restaurant" id="eg3" data-toggle="modal">
-                <img alt="eg3" class="restaurant-pic" src="static/mainSite/app/img/eg3.png">
-                <h5 class="text-center strong">eg3<br>Japanese</h5>
-            </a>
-            <a href="#menu" class="restaurant" id="eg4" data-toggle="modal">
-                <img alt="eg4" class="restaurant-pic" src="static/mainSite/app/img/eg4.png">
-                <h5 class="text-center strong">eg4<br>Indian</h5>
-            </a>
-        </div>
-    </div>
-</div>
+               <a class="restaurant">
+                    <img alt="{{menu1.name}}" ng-src="{{menu1.img}}" class="restaurant-pic">
+                    <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.category }}</h5>
 
--->
+                    Add to chart:   <input type="button" value="<<" ng-click="order1 = (order1>0)?order1-1:0" />
+                    {{ order1}}
+                     <input type="button" value=">>" ng-click="order1 = order1+1" />
+
+
+               </a>
+
+               <a class="restaurant">
+                    <img alt="{{menu2.name}}" ng-src="{{menu2.img}}" class="restaurant-pic">
+                    <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.category }}</h5>
+
+                    Add to chart:   <input type="button" value="<<" ng-click="order2 = (order2>0)?order2-1:0" />
+                    {{ order2}}
+                     <input type="button" value=">>" ng-click="order2 = order2+1" />
+
+              </a>
+        </div>
+
+    </div>
+
+
+    <a href="#/"> Go back to companies</a>
+    <a href="#/checkout"   ng-click="open()" ng-show="order1 >0 || order2 > 0"> Check Out </a>
+
+
+
 <!--
-<div class="container">
-    <div class="choose-text">
-        <h3>What do you want for lunch?</h3>
-    </div>
-<div class="restaurants">
-
-    <div ng-repeat="restaurantgroup in restaurants">
-        <div class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
-        <a class="restaurant" data-toggle="modal">
-          <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
-           <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
-        </a>
-        </div>
-    </div>
-  </div>
-</div>
-
--->
-
 <div class="container" >
     <div class="choose-text">
         <h3>What do you want for lunch?</h3>
@@ -66,58 +54,48 @@
 
         <tr ng-repeat="restaurantgroup in restaurants">
             <td class="restaurant-column" ng-repeat="restaurant in restaurantgroup">
-                <a class="restaurant"  ng-click="open()">
+                <a class="restaurant">
                     <img alt="{{restaurant.name}}" ng-src="{{restaurant.img}}" class="restaurant-pic">
                     <h5 class="text-center strong">{{ restaurant.name }}<br>{{ restaurant.category }}</h5>
+
+                      Add to chart:   <input type="button" value="<<" ng-click="restaurant.amount = (restaurant.amount>0)?order1.amount-1:0" />
+                    {{ restaurant.amount}}
+                <input type="button" value=">>" ng-click="restaurant.amount = restaurant.amount+1" />
+
                 </a>
+
+
             </td>
         </tr>
     </table>
-
-    <a href="#/checkout"> Check Out </a>
+    <a href="#/"> Go back to companies</a>
+    <a href="#/checkout"   ng-click="open()"> Check Out </a>
     <br>
     </div>
-
-
-
-<!--modal-->
-<!--menu-->
-
-<!--
-<script type="text/ng-template" id="myModalContent.html">
-<div class="modal fade" id="menu">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <table>
-                    <tr>
-                    {{ restaurant.name }}
-                    </tr>
-                    <tr ng-repeat="menu in restaurant.menus">
-                        {{ menu.name }}
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-</script>
 
 -->
 
 
+
 <div >
-    <script type="text/ng-template" id="myModalContent">
+    <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
             <h3>I'm a modal!</h3>
         </div>
         <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a ng-click="selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
+
+                <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.price }}*{{ order1 }}</h5>
+                <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.price }}*{{ order2 }}</h5>
+
+                   <pre>{{tips}}</pre>
+                <div class="btn-group">
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0'">0%</button>
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.1'">10%</button>
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.15'">15%</button>
+                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.2'">20%</button>
+
+                </div>
+
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" ng-click="ok()">OK</button>
@@ -125,8 +103,8 @@
         </div>
     </script>
 
-    <button class="btn" ng-click="open()">Open me!</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+
+
 </div>
 
 </div>
