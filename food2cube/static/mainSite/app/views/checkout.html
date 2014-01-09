@@ -35,19 +35,24 @@
 
                </div>
                 <p>Total Amount:</p>
-                <p> {{ totalAmount }}</p>
+                <p> {{ totalAmount | currency:"$"}}</p>
     </div>
+
+    <button class="btn btn-primary" ng-click="goBack('/company/1');">Go back to menu</button>
+
+
+
+
+    <button  class="btn btn-block btn-link"
+             ng-click="checkout()"
+             ng-disabled="totalAmount <= 0" >
+    <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
+    </button>
+
 
     <div><!--CheckoutPanel-->
             <a data-toggle="modal" data-target="#bill">Proceed to Checkout</a>
     </div>
-
-    <div><!--DebugPanel-->
-        <p>Debug:</p>
-        <p>{{ items | json }}</p>
-
-    </div>
-
     <!--bill-->
     <div class="modal fade" id="bill">
         <div class="modal-dialog">
