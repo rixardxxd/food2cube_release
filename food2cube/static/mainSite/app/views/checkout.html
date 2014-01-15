@@ -50,6 +50,14 @@
     </button>
 
 
+    Please choose the address you want to deliver:
+    <span class="address">
+    <select ng-model="address" ng-options="a.address for a in addresses">
+        <option value="">-- choose color --</option>
+    </select>
+    </span>
+
+
     <div><!--CheckoutPanel-->
             <a data-toggle="modal" data-target="#bill">Proceed to Checkout</a>
     </div>

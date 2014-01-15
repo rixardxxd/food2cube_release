@@ -5,8 +5,20 @@
                     business: "rixardxxd@gmail.com",
                     upload: "1",
                     rm: "2",
-                    charset: "utf-8"
+                    charset: "utf-8",
+                    cancel_return: "http://www.sina.com.cn",
+                    return: "http://www.yahoo.com",
+                    no_shipping: "1",
+                    cn: "Will be delivered to address 1"
+
+
                 };
+var addresses = [
+    {address: "cisco 1", img: "img1"},
+    {address: "cisco 2", img: "img2"},
+    {address: "cisco 3", img: "img3"}
+];
+
 
 angular.module('food2cubeApp')
   .controller('CheckoutCtrl', ['$log','$scope', 'Checkout', '$http','Menu','$location',
@@ -64,7 +76,9 @@ angular.module('food2cubeApp')
 
                 // build form
                 var form = $('<form/></form>');
-                form.attr("action", "https://www.paypal.com/cgi-bin/webscr");
+                form.attr("action", "https://www.sandbox.paypal.com/cgi-bin/webscr");
+
+              //  form.attr("https://www.sandbox.paypal.com/cgi-bin/webscr?");
                 form.attr("method", "POST");
                 form.attr("style", "display:none;");
                 addFormFields(form, data);
@@ -75,6 +89,10 @@ angular.module('food2cubeApp')
                 form.submit();
                 form.remove();
             }
+
+
+            $scope.addresses = addresses;
+            $scope.address = addresses[0];
         }
     ]);
 

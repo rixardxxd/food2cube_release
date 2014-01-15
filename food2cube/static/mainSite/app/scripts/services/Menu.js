@@ -5,12 +5,12 @@ angular.module('food2cubeApp')
   .factory('Menu', function () {
     var menu1 =
         {id: 100, name: 'eg1', category: 'Chinese', description: '',img: 'static/mainSite/app/img/eg1.png',
-            price: '8.5'
+            price: '0.5'
 
         };
 
     var menu2 =   {id: 101, name: 'eg2',category: 'Japanese', description:'', img: 'static/mainSite/app/img/eg2.png',
-            price: '8.75'
+            price: '0.5'
         };
 
     var order1 = 0;
