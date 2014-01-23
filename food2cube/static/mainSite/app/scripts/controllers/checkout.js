@@ -6,8 +6,8 @@
                     upload: "1",
                     rm: "2",
                     charset: "utf-8",
-                    cancel_return: "http://www.sina.com.cn",
-                    return: "http://www.yahoo.com",
+                    cancel_return: "http://morning-cove-6125.herokuapp.com/#/company/1",
+                    return: "http://morning-cove-6125.herokuapp.com/#/ordercompletion/1",
                     no_shipping: "1",
                     cn: "Will be delivered to address 1"
 
