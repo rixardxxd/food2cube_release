@@ -1,5 +1,4 @@
 # Django settings for food2cube project.
-from personal import developer
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
