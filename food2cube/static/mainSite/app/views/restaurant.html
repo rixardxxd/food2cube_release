@@ -9,42 +9,37 @@
 
 
 <div class="container">
-    <div class="choose-text">
-        <h3>What do you want for lunch?</h3>
-    </div>
     <div class="restaurants">
         <div class="restaurant-row">
-               <a class="restaurant">
+               <div class="restaurant">
                     <img alt="{{menu1.name}}" ng-src="{{menu1.img}}" class="restaurant-pic">
                     <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.category }}</h5>
+                    <div style="margin-top:10px;">
+                        Add to chart:   <input type="button" class="btn btn-default" value="<<" ng-click="order1 = (order1>0)?order1-1:0" />
+                        {{ order1}}
+                        <input type="button" class="btn btn-default" value=">>" ng-click="order1 = order1+1" />
+                    </div>
 
-                    Add to chart:   <input type="button" value="<<" ng-click="order1 = (order1>0)?order1-1:0" />
-                    {{ order1}}
-                     <input type="button" value=">>" ng-click="order1 = order1+1" />
+               </div>
 
-
-               </a>
-
-               <a class="restaurant">
+               <div class="restaurant">
                     <img alt="{{menu2.name}}" ng-src="{{menu2.img}}" class="restaurant-pic">
                     <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.category }}</h5>
-
-                    Add to chart:   <input type="button" value="<<" ng-click="order2 = (order2>0)?order2-1:0" />
-                    {{ order2}}
-                     <input type="button" value=">>" ng-click="order2 = order2+1" />
-
-              </a>
+                    <div style="margin-top:10px;">
+                        Add to cart:   <input type="button" class="btn btn-default" value="<<" ng-click="order2 = (order2>0)?order2-1:0" />
+                        {{ order2}}
+                        <input type="button" class="btn btn-default" value=">>" ng-click="order2 = order2+1" />
+                    </div>
+              </div>
         </div>
 
     </div>
 
 
-
-    <button class="btn btn-primary" ng-click="goBack('/');">Go back to companies</button>
-
-
-    <button class="btn btn-primary" ng-click="proceed('/checkout');"  ng-show="order1 >0 || order2 > 0">Check Out</button>
-
+    <div style="display:inline-block; text-align:center; width:100%;">
+        <button class="btn btn-primary" ng-click="goBack('/');" style="margin-right:30px;">Go back to companies</button>
+        <button class="btn btn-primary" ng-click="proceed('/checkout');"  ng-show="order1 >0 || order2 > 0">Check Out</button>
+    </div>
 
 
 <div >
