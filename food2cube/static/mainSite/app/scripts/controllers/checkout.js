@@ -7,7 +7,7 @@
                     rm: "2",
                     charset: "utf-8",
                     cancel_return: "http://morning-cove-6125.herokuapp.com/#/company/1",
-                    return: "http://morning-cove-6125.herokuapp.com/#/ordercompletion/1",
+                    return: "http://morning-cove-6125.herokuapp.com/#/ordercompletion",
                     no_shipping: "1",
                     cn: "Will be delivered to address 1"
 
@@ -81,6 +81,9 @@ angular.module('food2cubeApp')
               //  form.attr("https://www.sandbox.paypal.com/cgi-bin/webscr?");
                 form.attr("method", "POST");
                 form.attr("style", "display:none;");
+
+              //add query parameter
+                data.return = data.return + "/"+$scope.address;
                 addFormFields(form, data);
               //  addFormFields(form, parms.options);
                 $("body").append(form);
