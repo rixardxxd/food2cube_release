@@ -9,6 +9,7 @@ body {
 
 /*navbar*/
 .logo {
+    background: url('/static/mainSite/app/img/newfood2cube.png');
     font-family: 'Finger Paint', cursive;
     color: #BF0000 !important;
     font-size: 26px;

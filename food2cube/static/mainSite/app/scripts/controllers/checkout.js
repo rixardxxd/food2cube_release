@@ -1,7 +1,11 @@
 'use strict';
  var data = {
 
-                    cmd: "_cart",
+                    cmd: "_ext-enter",
+                    redirect_cmd: "_cart",
+                    first_name: "wwww",
+                    last_name: "bbb",
+                    night_phone_a: "4083067511",
                     business: "rixardxxd@gmail.com",
                     upload: "1",
                     rm: "2",
@@ -76,7 +80,7 @@ angular.module('food2cubeApp')
 
                 // build form
                 var form = $('<form/></form>');
-                form.attr("action", "https://www.sandbox.paypal.com/cgi-bin/webscr");
+                form.attr("action", "https://www.paypal.com/cgi-bin/webscr");
 
               //  form.attr("https://www.sandbox.paypal.com/cgi-bin/webscr?");
                 form.attr("method", "POST");
