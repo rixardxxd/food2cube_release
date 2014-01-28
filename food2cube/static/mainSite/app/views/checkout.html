@@ -42,31 +42,82 @@
 
 
 
-
-    <button  class="btn btn-block btn-link"
-             ng-click="checkout()"
-             ng-disabled="totalAmount <= 0" >
-    <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
-    </button>
-
-
     Please choose the address you want to deliver:
     <span class="address">
     <select ng-model="address" ng-options="a.address for a in addresses">
-        <option value="">-- choose color --</option>
+        <option value="">-- choose address --</option>
     </select>
     </span>
 
+    <div>
+         <form class="form-horizontal" role="form" ng-submit="" name="checkoutform" >
+            <div class="form-group">
+                <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                     <span class="error" ng-show="checkoutform.firstname.$error.required">Required!</span>
+                     <span class="error" ng-show="checkoutform.firstname.$invalid">Must be characters!</span>
 
-    <div><!--CheckoutPanel-->
-            <a data-toggle="modal" data-target="#bill">Proceed to Checkout</a>
-    </div>
-    <!--bill-->
+
+                 </div>
+            </div>
+            <div class="form-group">
+                 <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
+                 <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputLastName" ng-model="checkoutuser.lastname" name="lastname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                     <span class="error" ng-show="checkoutform.lastname.$error.required">Required!</span>
+                    <span class="error" ng-show="checkoutform.lastname.$invalid">Must be characters!</span>
+
+                  </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
+              <div class="col-lg-10">
+                <input type="email" class="form-control" id="inputEmail" ng-model="checkoutuser.email" name="email" required>
+                <span class="error" ng-show="checkoutform.email.$error.required">Required!</span>
+                <span class="error" ng-show="checkoutform.email.$error.email">Not a valid email address!</span>
+
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPhone" class="col-lg-2 control-label">Phone Number</label>
+              <div class="col-lg-10">
+                <input type="tel" class="form-control" id="inputPhone" ng-model="checkoutuser.phone" name="phone" required ng-pattern="/^[0-9]+$/"/>
+                <span class="error" ng-show="checkoutform.phone.$error.required">Required!</span>
+                <span class="error" ng-show="checkoutform.phone.$invalid">Not a valid phone number!</span>
+
+              </div>
+            </div>
+         
+
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-block btn-link" ng-disabled="checkoutform.$invalid || totalAmount <= 0" data-toggle="modal" data-target="#bill">
+                    <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
+   
+                </button>
+              </div>
+            </div>
+        </form>
+
+    </div> 
+
+
+
     <div class="modal fade" id="bill">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    Bill Detail:
+                     <span class="info" >{{checkoutuser.firstname}}</span>
+                     <span class="info" >{{checkoutuser.lastname}}</span>
+                     <span class="info" >{{checkoutuser.email}}</span>
+                     <span class="info" >{{checkoutuser.phone}}</span>
+                     <button  class="btn btn-block btn-link" ng-click="checkout()">
+                         <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
+   
+                   </button>
+               
                 </div>
             </div>
         </div>
