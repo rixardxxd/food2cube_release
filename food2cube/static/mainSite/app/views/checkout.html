@@ -1,6 +1,6 @@
-
-<div>
-    <div><!--ShoppingCartContent-->
+<div class="container">
+    <div class="row"><!--ShoppingCartContent-->
+        <div class='col-md-6'>
             <table class="shopping-cart">
             <tr>
                 <th>
@@ -22,53 +22,40 @@
                     <input type="button" value=">>" ng-click="item.amount = item.amount+1;doUpdateAmount();" />
                 </td>
             </tr>
-
-
-
             </table>
 
-              <div class="btn-group">
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0" ng-click="tips = 0;doUpdateAmount();">0%</button>
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.1" ng-click="tips = 0.1;doUpdateAmount();">10%</button>
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.15" ng-click="tips = 0.15;doUpdateAmount();">15%</button>
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.2" ng-click="tips = 0.2;doUpdateAmount();">20%</button>
-
-               </div>
-                <p>Total Amount:</p>
-                <p> {{ totalAmount | currency:"$"}}</p>
-    </div>
-
-    <button class="btn btn-primary" ng-click="goBack('/company/1');">Go back to menu</button>
-
-
-
-    Please choose the address you want to deliver:
-    <span class="address">
-    <select ng-model="address" ng-options="a.address for a in addresses">
-        <option value="">-- choose address --</option>
-    </select>
-    </span>
-
-    <div>
-         <form class="form-horizontal" role="form" ng-submit="" name="checkoutform" >
+            <div class="btn-group">
+                   <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0" ng-click="tips = 0;doUpdateAmount();">0%</button>
+                   <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.1" ng-click="tips = 0.1;doUpdateAmount();">10%</button>
+                   <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.15" ng-click="tips = 0.15;doUpdateAmount();">15%</button>
+                   <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="0.2" ng-click="tips = 0.2;doUpdateAmount();">20%</button>
+             </div>
+            <p>Total Amount:</p>
+            <p> {{ totalAmount | currency:"$"}}</p>
+        </div>
+        <div class='col-md-6'>
+          Please choose the address you want to deliver:
+          <span class="address">
+          <select ng-model="address" ng-options="a.address for a in addresses">
+              <option value="">-- choose address --</option>
+          </select>
+          </span>
+          <form class="form-horizontal" role="form" ng-submit="" name="checkoutform" >
             <div class="form-group">
-                <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
-                     <span class="error" ng-show="checkoutform.firstname.$error.required">Required!</span>
-                     <span class="error" ng-show="checkoutform.firstname.$invalid">Must be characters!</span>
-
-
-                 </div>
+              <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                   <span class="error" ng-show="checkoutform.firstname.$error.required">Required!</span>
+                   <span class="error" ng-show="checkoutform.firstname.$invalid">Must be characters!</span>
+               </div>
             </div>
             <div class="form-group">
-                 <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
-                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputLastName" ng-model="checkoutuser.lastname" name="lastname" required ng-pattern="/^[a-zA-Z]+$/"/>
-                     <span class="error" ng-show="checkoutform.lastname.$error.required">Required!</span>
-                    <span class="error" ng-show="checkoutform.lastname.$invalid">Must be characters!</span>
-
-                  </div>
+              <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputLastName" ng-model="checkoutuser.lastname" name="lastname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                <span class="error" ng-show="checkoutform.lastname.$error.required">Required!</span>
+                <span class="error" ng-show="checkoutform.lastname.$invalid">Must be characters!</span>
+              </div>
             </div>
             <div class="form-group">
               <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
@@ -76,8 +63,6 @@
                 <input type="email" class="form-control" id="inputEmail" ng-model="checkoutuser.email" name="email" required>
                 <span class="error" ng-show="checkoutform.email.$error.required">Required!</span>
                 <span class="error" ng-show="checkoutform.email.$error.email">Not a valid email address!</span>
-
-
               </div>
             </div>
             <div class="form-group">
@@ -86,24 +71,20 @@
                 <input type="tel" class="form-control" id="inputPhone" ng-model="checkoutuser.phone" name="phone" required ng-pattern="/^[0-9]+$/"/>
                 <span class="error" ng-show="checkoutform.phone.$error.required">Required!</span>
                 <span class="error" ng-show="checkoutform.phone.$invalid">Not a valid phone number!</span>
-
               </div>
             </div>
-         
-
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
                 <button type="submit" class="btn btn-block btn-link" ng-disabled="checkoutform.$invalid || totalAmount <= 0" data-toggle="modal" data-target="#bill">
                     <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
-   
                 </button>
               </div>
             </div>
-        </form>
-
+          </form>
+        </div>
     </div> 
 
-
+<button class="btn btn-primary" ng-click="goBack('/company/1');">Go back to menu</button>
 
     <div class="modal fade" id="bill">
         <div class="modal-dialog">
