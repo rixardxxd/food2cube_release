@@ -3,9 +3,6 @@
 
                     cmd: "_ext-enter",
                     redirect_cmd: "_cart",
-                    first_name: "wwww",
-                    last_name: "bbb",
-                    night_phone_a: "4083067511",
                     business: "rixardxxd@gmail.com",
                     upload: "1",
                     rm: "2",
@@ -65,30 +62,36 @@ angular.module('food2cubeApp')
 
                     $log.info("Menu1 " + Menu1.amount);
                     $log.info("Menu2 " + Menu2.amount);
+
+                var data_copy = jQuery.extend(true, {}, data);
                 var count = 1;
                 if(Menu1.amount > 0){
-                   data["item_name_" + count] = Menu1.name;
-                   data["amount_" + count] = Menu1.price;
-                   data["quantity_" + count] = Menu1.amount;
+                   data_copy["item_name_" + count] = Menu1.name;
+                   data_copy["amount_" + count] = Menu1.price;
+                   data_copy["quantity_" + count] = Menu1.amount;
                     count = count + 1;
                 }
                 if(Menu2.amount > 0){
-                    data["item_name_" + count] = Menu2.name;
-                    data["amount_" + count] = Menu2.price;
-                    data["quantity_" + count] = Menu2.amount;
+                    data_copy["item_name_" + count] = Menu2.name;
+                    data_copy["amount_" + count] = Menu2.price;
+                    data_copy["quantity_" + count] = Menu2.amount;
                 }
 
                 // build form
                 var form = $('<form/></form>');
-                form.attr("action", "https://www.paypal.com/cgi-bin/webscr");
+               // form.attr("action", "https://www.paypal.com/cgi-bin/webscr");
 
-              //  form.attr("https://www.sandbox.paypal.com/cgi-bin/webscr?");
+                form.attr("action","https://www.sandbox.paypal.com/cgi-bin/webscr");
                 form.attr("method", "POST");
                 form.attr("style", "display:none;");
 
               //add query parameter
-                data.return = data.return + "/"+$scope.address;
-                addFormFields(form, data);
+                data_copy.return = data_copy.return + "/"+$scope.address;
+                data_copy.first_name = $scope.checkoutuser.firstname;
+                data_copy.last_name = $scope.checkoutuser.lastname;
+                data_copy.night_phone_a = $scope.checkoutuser.phone;
+                data_copy.email = $scope.checkoutuser.email;
+                addFormFields(form, data_copy);
               //  addFormFields(form, parms.options);
                 $("body").append(form);
                 $log.info(form);
