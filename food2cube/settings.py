@@ -127,12 +127,16 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'rest_framework',
     'south',
-    'sendgrid'
+    'sendgrid',
+    'paypal.standard.ipn',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+PAYPAL_RECEIVER_EMAIL = "rixardxxd@gmail.com"
+
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 

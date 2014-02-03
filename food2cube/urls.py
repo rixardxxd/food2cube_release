@@ -4,6 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 from mainSite import views
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -18,5 +19,7 @@ urlpatterns = patterns('',
     url(r'^$', views.landing, name='landing'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/',include('mainSite.urls',namespace="mainSite")),
+    url(r'^paypalipnlistener/', include('paypal.standard.ipn.urls')),
+
 
 )
