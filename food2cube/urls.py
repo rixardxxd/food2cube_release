@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^$', views.landing, name='landing'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/',include('mainSite.urls',namespace="mainSite")),
-    url(r'^paypalipnlistener/', include('paypal.standard.ipn.urls')),
+    url(r'^paypalipnlistener', include('paypal.standard.ipn.urls')),
 
 
 )
