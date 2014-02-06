@@ -5,5 +5,6 @@ def save_payment_and_send_email(sender, **kwargs):
     log = logging.getLogger(__name__)
     log.info('aaaaaaaaa')
     log.info(sender)
+    print __file__,1, 'This works'
 
 payment_was_successful.connect(save_payment_and_send_email)
