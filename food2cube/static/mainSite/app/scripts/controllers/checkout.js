@@ -11,7 +11,7 @@
                     return: "http://morning-cove-6125.herokuapp.com/#/ordercompletion",
                     no_shipping: "1",
                     cn: "Will be delivered to address 1",
-                    notify_url: "http://morning-cove-6125.herokuapp.com/paypalipnlistener/"
+                    notify_url: "http://morning-cove-6125.herokuapp.com/paypalipnlistener"
 
                 };
 var addresses = [
