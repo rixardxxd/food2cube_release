@@ -14,7 +14,7 @@ def save_payment_and_send_email(sender, **kwargs):
 
 
 def payment_flagged(sender, **kwargs):
-    print "FLAGGED: %s" % sender.payer_email
+    log.info("FLAGGED: %s" % sender.payer_email)
 
 #Here is the payment successful signal passed from the django paypal
 payment_was_successful.connect(save_payment_and_send_email)
