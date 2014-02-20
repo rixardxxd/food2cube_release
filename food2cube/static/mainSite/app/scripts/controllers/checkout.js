@@ -4,16 +4,15 @@
                     cmd: "_ext-enter",
                     redirect_cmd: "_cart",
                     business: "rixardxxd@gmail.com",
-                    invoice: "unique-invoice-id",
                     upload: "1",
                     rm: "2",
                     charset: "utf-8",
-                    cancel_return: "http://morning-cove-6125.herokuapp.com/#/company/1",
-                    return: "http://morning-cove-6125.herokuapp.com/#/ordercompletion",
+                    cancel_return: "http://www.food2cube.com/#/company/1",
+                    return: "http://www.food2cube.com/#/ordercompletion",
                     no_shipping: "1",
                     cn: "Will be delivered to address 1",
                     custom: "Will be delivered to cisco parking lot A at 2:40",
-                    notify_url: "http://morning-cove-6125.herokuapp.com/paypalipnlistener"
+                    notify_url: "http://www.food2cube.com/paypalipnlistener"
 
                 };
 var addresses = [
