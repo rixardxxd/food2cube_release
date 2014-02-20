@@ -7,6 +7,9 @@ def save_payment_and_send_email(sender, **kwargs):
     ipn_obj = sender
     log.info('aaaaaaaaa')
     log.info(sender)
+    log.error('bbbbbbbbb')
+    print 'Here it isssssss'
+
     print __file__,1, 'This works'
     if ipn_obj.custom is not None:
         log.info(ipn_obj.custom)
@@ -14,6 +17,8 @@ def save_payment_and_send_email(sender, **kwargs):
 
 
 def payment_flagged(sender, **kwargs):
+	print 'There it isssssss'
+	log.error('ccccccccc')
     log.info("FLAGGED: %s" % sender.payer_email)
 
 #Here is the payment successful signal passed from the django paypal
