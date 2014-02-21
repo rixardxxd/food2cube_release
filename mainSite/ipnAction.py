@@ -10,7 +10,6 @@ def save_payment_and_send_email(sender, **kwargs):
     log.error('bbbbbbbbb')
     print 'Here it isssssss'
 
-    print __file__,1, 'This works'
     if ipn_obj.custom is not None:
         log.info(ipn_obj.custom)
 
