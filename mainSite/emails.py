@@ -130,7 +130,7 @@ def sendConfirmEmail(receiver):
     #prepare email
     hdr = SmtpApiHeader()
 
-   
+    receiver = [receiver]
     names = "example"
     totals = 0
 
@@ -145,8 +145,8 @@ def sendConfirmEmail(receiver):
     log.info(order_detail_html)
 
     hdr.addTo(receiver)
-    hdr.addSubVal('-total-', totals)
-    hdr.addSubVal('-name-', names)
+    hdr.addSubVal('-total-', [totals])
+    hdr.addSubVal('-name-', [names])
     hdr.addSubVal('-order_detail-', [order_detail])
     hdr.addSubVal('-order_detail_html-', [order_detail_html])
 
