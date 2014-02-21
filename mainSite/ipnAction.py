@@ -1,4 +1,5 @@
 from paypal.standard.ipn.signals import payment_was_successful,payment_was_flagged
+import mainSite.emails
 import logging
 log = logging.getLogger(__name__)
 
@@ -10,6 +11,8 @@ def save_payment_and_send_email(sender, **kwargs):
     log.error('bbbbbbbbb')
     print 'Here it isssssss'
 
+    emails.sendConfirmEmail("rixardxxd@gmail.com")
+    
     if ipn_obj.custom is not None:
         log.info(ipn_obj.custom)
 
@@ -17,6 +20,7 @@ def save_payment_and_send_email(sender, **kwargs):
 
 def payment_flagged(sender, **kwargs):
     print 'There it isssssss'
+    emails.sendConfirmEmail("rixardxxd@gmail.com")
     log.error('ccccccccc')
 #log.info("FLAGGED: %s" % sender.payer_email)
 

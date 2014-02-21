@@ -10,7 +10,7 @@ from django.core.mail import EmailMultiAlternatives
 import sendgrid
 from models import MyUser, Transaction, Order, OrderLine
 
-fromEmail =  'oceanmaster.wang@gmail.com'
+fromEmail =  'xingxiaodi@yahoo.com'
 subject_template='-name-, Thank you for ordering in food2cube!'
 content_text_template="""\
     Dear -name-,
@@ -73,7 +73,7 @@ def sendDeliverEmailToRestaurants():
 
 
 
-def sendConfirmEmail(user_id, transaction_id, order_id):
+def sendConfirmEmailOld(user_id, transaction_id, order_id):
 
     log.info("Sending Confirm Email")
 
@@ -96,6 +96,49 @@ def sendConfirmEmail(user_id, transaction_id, order_id):
     for orderline in orderlines:
         order_detail+=str(orderline)+"\n"
         order_detail_html+=str(orderline)+"<br>"
+
+    log.info("Order Detail:")
+    log.info(order_detail)
+    log.info(order_detail_html)
+
+    hdr.addTo(receiver)
+    hdr.addSubVal('-total-', totals)
+    hdr.addSubVal('-name-', names)
+    hdr.addSubVal('-order_detail-', [order_detail])
+    hdr.addSubVal('-order_detail_html-', [order_detail_html])
+
+    hdr.setCategory("initial")  # Specify that this is an initial contact message
+    hdr.addFilterSetting('footer', 'enable', 1)
+    hdr.addFilterSetting('footer', "text/plain", "Thank you for your business!")
+
+    msg = EmailMultiAlternatives(subject_template, content_text_template, fromEmail, receiver, headers={"X-SMTPAPI": hdr.asJSON()})
+    msg.attach_alternative(content_html_template, "text/html")
+    msg.send()
+
+    return
+
+
+
+def sendConfirmEmail(receiver):
+
+    log.info("Sending Confirm Email")
+
+    #prepare objects
+    #myuser = MyUser.objects.get(id=user_id)
+    #transaction = Transaction.objects.get(id=transaction_id)
+
+    #prepare email
+    hdr = SmtpApiHeader()
+
+   
+    names = "example"
+    totals = 0
+
+   
+    order_detail='here is the detail'
+    order_detail_html='here is the detail html'
+
+ 
 
     log.info("Order Detail:")
     log.info(order_detail)
