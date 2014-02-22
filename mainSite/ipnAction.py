@@ -20,7 +20,7 @@ def save_payment_and_send_email(sender, **kwargs):
 
 def payment_flagged(sender, **kwargs):
     print 'There it isssssss'
-    sendConfirmEmail("rixardxxd@gmail.com")
+
     log.error('ccccccccc')
 #log.info("FLAGGED: %s" % sender.payer_email)
 
