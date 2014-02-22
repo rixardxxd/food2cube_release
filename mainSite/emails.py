@@ -119,9 +119,9 @@ def sendConfirmEmailOld(user_id, transaction_id, order_id):
 
 
 
-def sendConfirmEmail(receiver):
+def sendConfirmEmail(name,email,phone):
 
-    log.info("Sending Confirm Email")
+    log.info("Sending Confirm Email to" + name + " " + email + " " + phone)
 
     #prepare objects
     #myuser = MyUser.objects.get(id=user_id)
@@ -130,7 +130,7 @@ def sendConfirmEmail(receiver):
     #prepare email
     hdr = SmtpApiHeader()
 
-    receiver = [receiver]
+    receiver = [email]
     names = "example"
     totals = 0
 
