@@ -36,16 +36,13 @@ angular.module('food2cubeApp')
                 menuList.push(Menu2);
                 $scope.items = menuList;
 
-                $scope.tips = 0 ;
-
                 var calculate = function()
                 {
                      var amount = 0;
                     for(var i = 0;i < menuList.length; i ++){
                        amount = amount + menuList[i].amount * menuList[i].price;
                     }
-                    amount = (1 + $scope.tips) * amount;
-                    $log.info($scope.tips);
+
                     $scope.totalAmount = amount;
 
                     return amount;
