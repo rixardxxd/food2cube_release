@@ -87,17 +87,3 @@ def testemail(request):
 
     #return precalculateTotalPrice(request)
 
-# def getRestaurantAndMenuFromCompany(request):
-#
-#     company_name = request.POST['company_name']
-#     company = Company.objects.get(name = company_name)
-#     restaurants = Restaurant.objects.filter(nearby_company = company)
-#     menus = Menu.objects.filter(restaurant = restaurants)
-#
-#     print(company)
-#     print(restaurants)
-#
-#     return HttpResponse(menus)
-# response_data = {}
-# response_data['company'] = company
-# response_data['restaurant'] = restaurant

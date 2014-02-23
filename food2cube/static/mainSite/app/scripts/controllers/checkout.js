@@ -7,12 +7,12 @@
                     upload: "1",
                     rm: "2",
                     charset: "utf-8",
-                    cancel_return: "http://morning-cove-6125.herokuapp.com/#/company/1",
-                    return: "http://morning-cove-6125.herokuapp.com/#/ordercompletion",
+                    cancel_return: "http://www.food2cube.com/#/company/1",
+                    return: "http://www.food2cube.com/#/ordercompletion",
                     no_shipping: "1",
                     cn: "Will be delivered to address 1",
-                    custom: "Will be delivered to cisco parking lot A at 2:40",
-                    notify_url: "http://morning-cove-6125.herokuapp.com/paypalipnlistener"
+                    custom: "",
+                    notify_url: "http://www.food2cube.com/paypalipnlistener"
 
                 };
 var addresses = [
@@ -87,6 +87,9 @@ angular.module('food2cubeApp')
                 form.attr("style", "display:none;");
 
               //add query parameter
+                data_copy.custom = $scope.checkoutuser.firstname + " " + $scope.checkoutuser.lastname + "|" + $scope.checkoutuser.phone + "|" + $scope.checkoutuser.email;
+
+
                 data_copy.return = data_copy.return + "/"+$scope.address;
                 data_copy.first_name = $scope.checkoutuser.firstname;
                 data_copy.last_name = $scope.checkoutuser.lastname;
