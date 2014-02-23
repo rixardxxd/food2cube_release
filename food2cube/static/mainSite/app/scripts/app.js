@@ -4,11 +4,6 @@ angular.module('food2cubeApp', ['ngRoute','ui.bootstrap'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-
-        templateUrl: 'static/mainSite/app/views/company.html',
-        controller: 'CompanyCtrl'
-      })
-      .when('/company/:companyName', {
         templateUrl: 'static/mainSite/app/views/restaurant.html',
         controller: 'RestaurantCtrl'
 

@@ -29,6 +29,7 @@ content_html_template="""\
     <html>
         <head></head>
         <body>
+        <>
         <p>Hi! -name-<br>
            Thanks for ordering in food2cube!<br>
            Food ordered is:<br>

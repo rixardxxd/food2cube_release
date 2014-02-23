@@ -4,7 +4,6 @@
                     cmd: "_ext-enter",
                     redirect_cmd: "_cart",
                     business: "rixardxxd@gmail.com",
-                    invoice: "unique-invoice-id",
                     upload: "1",
                     rm: "2",
                     charset: "utf-8",
