@@ -2,6 +2,7 @@ html {
     height: 100%;
 }
 body {
+    font-family: 'Open Sans', sans-serif;
     height: 100%;
     padding-top: 50px;
     background-color: #fffff7;
