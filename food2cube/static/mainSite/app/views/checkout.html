@@ -1,115 +1,115 @@
-<div class="container">
-       <div class='col-md-6'>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>
-                            <a href="" ng-click="predicate = 'name'; reverse=!reverse">Item Name</a>
-                        </th>
-                        <th>
-                            <a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a>
-                        </th>
-                        <th>
-                            <a href="">Amount</a>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                        <tr ng-repeat="item in items | orderBy:predicate:reverse">
-                            <td>  {{item.name}}  </td>
-                            <td>  {{item.price | currency:"$"}}  </td>
-                            <td>
-                                <!--
-                                <input type="button" value="<<" ng-click="item.amount = (item.amount>0)?item.amount-1:0;doUpdateAmount();" />
-                                {{ item.amount }}
-                                <input type="button" value=">>" ng-click="item.amount = item.amount+1;doUpdateAmount();" />
-                                -->
+<div class="subheader">
+    <div class="pull-left subheader-content">
+        <span class="opening ng-binding">Order before 11:30am</span>
+        <span class="deliver ng-binding">Pick up 12:30pm @ Cisco parking lot A</span>
+    </div>
+    <button class="custom-btn back-btn" type="button" ng-click="goBack('/');"><span class="arrows"></span>BACK</button>
+</div>
 
-                                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = (item.amount>0)?item.amount-1:0;doUpdateAmount();">
-                                     <span class="glyphicon glyphicon-minus"></span>
-                                </button>
-                                 {{ item.amount }}
-                                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = item.amount+1;doUpdateAmount();">
-                                     <span class="glyphicon glyphicon-plus"></span>
-                                </button>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
+<div class='col-md-6'>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>
+                <a href="" ng-click="predicate = 'name'; reverse=!reverse">Item Name</a>
+            </th>
+            <th>
+                <a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a>
+            </th>
+            <th>
+                <a href="">Amount</a>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in items | orderBy:predicate:reverse">
+            <td>  {{item.name}}  </td>
+            <td>  {{item.price | currency:"$"}}  </td>
+            <td>
 
-            <p>Total Amount:</p>
-            <p> {{ totalAmount | currency:"$"}}</p>
-        </div>
+                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = (item.amount>0)?item.amount-1:0;doUpdateAmount();">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                {{ item.amount }}
+                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = item.amount+1;doUpdateAmount();">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Total Amount:</p>
+    <p> {{ totalAmount | currency:"$"}}</p>
+</div>
 
 
-        <div class='col-md-6'>
-          Please choose the address you want to deliver:
-          <span class="address">
-          <select ng-model="address" ng-options="a.address for a in addresses">
-              <option value="">-- choose address --</option>
-          </select>
-          </span>
-          <form class="form-horizontal" role="form" ng-submit="" name="checkoutform" >
-            <div class="form-group">
-              <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
-              <div class="col-lg-10">
-                  <input type="text" class="form-control" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
-                   <span class="error" ng-show="checkoutform.firstname.$error.required">Required!</span>
-                   <span class="error" ng-show="checkoutform.firstname.$invalid">Must be characters!</span>
-               </div>
+<div class='col-md-6'>
+    Please choose the address you want to deliver:
+<span class="address">
+<select ng-model="address" ng-options="a.address for a in addresses">
+  <option value="">-- choose address --</option>
+</select>
+</span>
+    <form class="form-horizontal" role="form" ng-submit="" name="checkoutform" >
+        <div class="form-group">
+            <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                <span class="error" ng-show="checkoutform.firstname.$error.required">Required!</span>
+                <span class="error" ng-show="checkoutform.firstname.$invalid">Must be characters!</span>
             </div>
-            <div class="form-group">
-              <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
-              <div class="col-lg-10">
+        </div>
+        <div class="form-group">
+            <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
+            <div class="col-lg-10">
                 <input type="text" class="form-control" id="inputLastName" ng-model="checkoutuser.lastname" name="lastname" required ng-pattern="/^[a-zA-Z]+$/"/>
                 <span class="error" ng-show="checkoutform.lastname.$error.required">Required!</span>
                 <span class="error" ng-show="checkoutform.lastname.$invalid">Must be characters!</span>
-              </div>
             </div>
-            <div class="form-group">
-              <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
-              <div class="col-lg-10">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email Address</label>
+            <div class="col-lg-10">
                 <input type="email" class="form-control" id="inputEmail" ng-model="checkoutuser.email" name="email" required>
                 <span class="error" ng-show="checkoutform.email.$error.required">Required!</span>
                 <span class="error" ng-show="checkoutform.email.$error.email">Not a valid email address!</span>
-              </div>
             </div>
-            <div class="form-group">
-              <label for="inputPhone" class="col-lg-2 control-label">Phone Number</label>
-              <div class="col-lg-10">
+        </div>
+        <div class="form-group">
+            <label for="inputPhone" class="col-lg-2 control-label">Phone Number</label>
+            <div class="col-lg-10">
                 <input type="tel" class="form-control" id="inputPhone" ng-model="checkoutuser.phone" name="phone" required ng-pattern="/^[0-9]+$/"/>
                 <span class="error" ng-show="checkoutform.phone.$error.required">Required!</span>
                 <span class="error" ng-show="checkoutform.phone.$invalid">Not a valid phone number!</span>
-              </div>
             </div>
-            <div class="form-group">
-              <div class="col-lg-offset-2 col-lg-10">
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
                 <button type="submit" class="btn btn-block btn-link" ng-disabled="checkoutform.$invalid || totalAmount <= 0" data-toggle="modal" data-target="#bill">
                     <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
                 </button>
-              </div>
             </div>
-          </form>
         </div>
+    </form>
+</div>
 
 
-<button class="btn btn-primary" ng-click="goBack('/company/1');">Go back to menu</button>
+<div class="modal fade" id="bill">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="info" >{{checkoutuser.firstname}}</span>
+                <span class="info" >{{checkoutuser.lastname}}</span>
+                <span class="info" >{{checkoutuser.email}}</span>
+                <span class="info" >{{checkoutuser.phone}}</span>
+                <button  class="btn btn-block btn-link" ng-click="checkout()">
+                    <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
 
-    <div class="modal fade" id="bill">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                     <span class="info" >{{checkoutuser.firstname}}</span>
-                     <span class="info" >{{checkoutuser.lastname}}</span>
-                     <span class="info" >{{checkoutuser.email}}</span>
-                     <span class="info" >{{checkoutuser.phone}}</span>
-                     <button  class="btn btn-block btn-link" ng-click="checkout()">
-                         <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
-   
-                   </button>
-               
-                </div>
+                </button>
+
             </div>
         </div>
     </div>
 </div>
+

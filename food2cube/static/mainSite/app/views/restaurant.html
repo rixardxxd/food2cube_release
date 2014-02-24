@@ -1,35 +1,39 @@
-<div class="container">
-    <div class="restaurants">
-        <div class="row restaurant-row">
-               <div class="col-md-6 restaurant">
-                    <img alt="{{menu1.name}}" ng-src="{{menu1.img}}" class="restaurant-pic">
-                    <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.category }}</h5>
-                    <div style="margin-top:10px;">
-                        Add to chart:   <input type="button" class="btn btn-default" value="<<" ng-click="order1 = (order1>0)?order1-1:0" />
-                        {{ order1}}
-                        <input type="button" class="btn btn-default" value=">>" ng-click="order1 = order1+1" />
-                    </div>
+<div class="subheader">
+    <div class="pull-left subheader-content">
+        <span class="opening ng-binding">Order before 11:30am</span>
+        <span class="deliver ng-binding">Pick up 12:30pm @ Cisco parking lot A</span>
+    </div>
+    <button class="custom-btn checkout-btn" type="button" ng-click="proceed('/checkout');"  ng-disabled="!(order1 >0 || order2 > 0)">Checkout<span class="arrows"></span></button>
+</div>
 
-               </div>
 
-               <div class="col-md-6 restaurant">
-                    <img alt="{{menu2.name}}" ng-src="{{menu2.img}}" class="restaurant-pic">
-                    <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.category }}</h5>
-                    <div style="margin-top:10px;">
-                        Add to cart:   <input type="button" class="btn btn-default" value="<<" ng-click="order2 = (order2>0)?order2-1:0" />
-                        {{ order2}}
-                        <input type="button" class="btn btn-default" value=">>" ng-click="order2 = order2+1" />
-                    </div>
-              </div>
+
+<div class="restaurants">
+    <div class="row restaurant-row">
+        <div class="col-md-6 restaurant">
+            <img alt="{{menu1.name}}" ng-src="{{menu1.img}}" class="restaurant-pic">
+            <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.category }}</h5>
+            <div style="margin-top:10px;">
+                Add to chart:   <input type="button" class="btn btn-default" value="<<" ng-click="order1 = (order1>0)?order1-1:0" />
+                {{ order1}}
+                <input type="button" class="btn btn-default" value=">>" ng-click="order1 = order1+1" />
+            </div>
+
         </div>
 
+        <div class="col-md-6 restaurant">
+            <img alt="{{menu2.name}}" ng-src="{{menu2.img}}" class="restaurant-pic">
+            <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.category }}</h5>
+            <div style="margin-top:10px;">
+                Add to cart:   <input type="button" class="btn btn-default" value="<<" ng-click="order2 = (order2>0)?order2-1:0" />
+                {{ order2}}
+                <input type="button" class="btn btn-default" value=">>" ng-click="order2 = order2+1" />
+            </div>
+        </div>
     </div>
 
+</div>
 
-    <div style="display:inline-block; text-align:center; width:100%;">
-        <button class="btn btn-primary" ng-click="goBack('/');" style="margin-right:30px;">Go back to companies</button>
-        <button class="btn btn-primary" ng-click="proceed('/checkout');"  ng-show="order1 >0 || order2 > 0">Check Out</button>
-    </div>
 
 
 <div >
@@ -39,17 +43,17 @@
         </div>
         <div class="modal-body">
 
-                <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.price }}*{{ order1 }}</h5>
-                <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.price }}*{{ order2 }}</h5>
+            <h5 class="text-center strong">{{ menu1.name }}<br>{{ menu1.price }}*{{ order1 }}</h5>
+            <h5 class="text-center strong">{{ menu2.name }}<br>{{ menu2.price }}*{{ order2 }}</h5>
 
 
-                <div class="btn-group">
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0'">0%</button>
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.1'">10%</button>
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.15'">15%</button>
-                     <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.2'">20%</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0'">0%</button>
+                <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.1'">10%</button>
+                <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.15'">15%</button>
+                <button type="button" class="btn btn-primary" ng-model="tips" btn-radio="'0.2'">20%</button>
 
-                </div>
+            </div>
 
         </div>
         <div class="modal-footer">
@@ -58,8 +62,6 @@
         </div>
     </script>
 
-
-
 </div>
 
-</div>
+
