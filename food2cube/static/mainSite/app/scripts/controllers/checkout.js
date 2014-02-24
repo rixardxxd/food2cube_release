@@ -83,9 +83,9 @@ angular.module('food2cubeApp')
                 form.attr("method", "POST");
                 form.attr("style", "display:none;");
 
-              //add query parameter
+              //add custom field
                 data_copy.custom = $scope.checkoutuser.firstname + " " + $scope.checkoutuser.lastname + "|" + $scope.checkoutuser.phone + "|" + $scope.checkoutuser.email;
-
+                var parameters = "?firstName=" + $scope.checkoutuser.firstname + "&lastName=" + $scope.checkoutuser.lastname + "&phone=" + $scope.checkoutuser.phone + "&email=" + $scope.checkoutuser.email;
 
                 data_copy.return = data_copy.return + "/"+$scope.address;
                 data_copy.first_name = $scope.checkoutuser.firstname;
