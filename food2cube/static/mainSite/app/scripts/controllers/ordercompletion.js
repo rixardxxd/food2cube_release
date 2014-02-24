@@ -4,7 +4,7 @@ angular.module('food2cubeApp')
   .controller('OrderCompletionCtrl', ['$log','$scope', '$http','$location', '$routeParams','DeliveryAddress',
         function ($log,$scope, $http,$location, $routeParams,DeliveryAddress)
         {
-            //$scope.option = $location.search('option');
+            $scope.firstName = $location.search('firstName');
             //$log.info($scope.option);
 
             if ($routeParams.firstName!= null) {
