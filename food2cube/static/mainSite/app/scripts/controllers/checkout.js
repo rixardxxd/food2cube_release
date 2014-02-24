@@ -87,7 +87,7 @@ angular.module('food2cubeApp')
                 data_copy.custom = $scope.checkoutuser.firstname + " " + $scope.checkoutuser.lastname + "|" + $scope.checkoutuser.phone + "|" + $scope.checkoutuser.email;
                 var parameters = "?firstName=" + $scope.checkoutuser.firstname + "&lastName=" + $scope.checkoutuser.lastname + "&phone=" + $scope.checkoutuser.phone + "&email=" + $scope.checkoutuser.email;
 
-                data_copy.return = data_copy.return + "/"+$scope.address;
+                data_copy.return = data_copy.return +parameters;
                 data_copy.first_name = $scope.checkoutuser.firstname;
                 data_copy.last_name = $scope.checkoutuser.lastname;
                 data_copy.night_phone_a = $scope.checkoutuser.phone;
