@@ -10,9 +10,7 @@ angular.module('food2cubeApp')
             if ($routeParams.option!= null) {
                 $scope.option = $routeParams.option;
                 $log.info($routeParams.option);
-                if($routeParams.option == 1){
-                    $scope.address = DeliveryAddress.
-                }
+                
             }
 
         }
