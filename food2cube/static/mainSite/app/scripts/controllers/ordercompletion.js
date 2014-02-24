@@ -7,10 +7,28 @@ angular.module('food2cubeApp')
             //$scope.option = $location.search('option');
             //$log.info($scope.option);
 
-            if ($routeParams.option!= null) {
-                $scope.option = $routeParams.option;
-                $log.info($routeParams.option);
-                
+            if ($routeParams.firstName!= null) {
+                $scope.firstName = $routeParams.firstName;
+                $log.info($routeParams.firstName);
+
+            }
+
+            if ($routeParams.lastName!= null) {
+                $scope.lastName = $routeParams.lastName;
+                $log.info($routeParams.lastName);
+
+            }
+
+            if ($routeParams.email!= null) {
+                $scope.email = $routeParams.email;
+                $log.info($routeParams.email);
+
+            }
+
+            if ($routeParams.phone!= null) {
+                $scope.phone = $routeParams.phone;
+                $log.info($routeParams.phone);
+
             }
 
         }
