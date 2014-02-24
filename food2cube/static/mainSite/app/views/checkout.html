@@ -7,44 +7,6 @@
 </div>
 
 <div class='col-md-6'>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>
-                <a href="" ng-click="predicate = 'name'; reverse=!reverse">Item Name</a>
-            </th>
-            <th>
-                <a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a>
-            </th>
-            <th>
-                <a href="">Amount</a>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="item in items | orderBy:predicate:reverse">
-            <td>  {{item.name}}  </td>
-            <td>  {{item.price | currency:"$"}}  </td>
-            <td>
-
-                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = (item.amount>0)?item.amount-1:0;doUpdateAmount();">
-                    <span class="glyphicon glyphicon-minus"></span>
-                </button>
-                {{ item.amount }}
-                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = item.amount+1;doUpdateAmount();">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-    <p>Total Amount:</p>
-    <p> {{ totalAmount | currency:"$"}}</p>
-</div>
-
-
-<div class='col-md-6'>
     Please choose the address you want to deliver:
 <span class="address">
 <select ng-model="address" ng-options="a.address for a in addresses">
@@ -55,7 +17,7 @@
         <div class="form-group">
             <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
+                <input type="text" size ="20" class="form-control custom-input" id="inputFirstName" ng-model="checkoutuser.firstname" name="firstname" required ng-pattern="/^[a-zA-Z]+$/"/>
                 <span class="error" ng-show="checkoutform.firstname.$error.required">Required!</span>
                 <span class="error" ng-show="checkoutform.firstname.$invalid">Must be characters!</span>
             </div>
@@ -93,6 +55,46 @@
         </div>
     </form>
 </div>
+
+
+<div class='col-md-6'>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>
+                <a href="" ng-click="predicate = 'name'; reverse=!reverse">Item Name</a>
+            </th>
+            <th>
+                <a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a>
+            </th>
+            <th>
+                <a href="">Amount</a>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in items | orderBy:predicate:reverse">
+            <td>  {{item.name}}  </td>
+            <td>  {{item.price | currency:"$"}}  </td>
+            <td>
+
+                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = (item.amount>0)?item.amount-1:0;doUpdateAmount();">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                {{ item.amount }}
+                <button type="button" class="btn btn-link btn-xs" ng-click="item.amount = item.amount+1;doUpdateAmount();">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Total Amount:</p>
+    <p> {{ totalAmount | currency:"$"}}</p>
+</div>
+
+
 
 
 <div class="modal fade" id="bill">
