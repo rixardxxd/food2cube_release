@@ -9,7 +9,7 @@ angular.module('food2cubeApp')
                         $location.path( path );
                     };
 
-            
+
             $scope.firstName = $location.search('firstName');
             //$log.info($scope.option);
 

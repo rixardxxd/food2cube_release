@@ -120,8 +120,16 @@ def sendConfirmEmailOld(user_id, transaction_id, order_id):
 
 
 
-def sendConfirmEmail(name,email,phone):
+def sendConfirmEmail(ipn_obj):
 
+    if ipn_obj.custom is not None:
+        log.info(ipn_obj.custom)
+        strings = ipn_obj.custom.split("|")
+
+    if len(strings) >=3:
+        name = strings[0]
+        email = strings[1]
+        phone = strings[2]
     log.info("Sending Confirm Email to" + name + " " + email + " " + phone)
 
     #prepare objects
@@ -132,9 +140,15 @@ def sendConfirmEmail(name,email,phone):
     hdr = SmtpApiHeader()
 
     receiver = [email]
-    names = "example"
+    names = name
     totals = 0
 
+    log.info("mc gross ", ipn_obj.mc_gross)
+    log.info("cart item number ", ipn_obj.num_cart_items)
+    log.info("item 1 name ",ipn_obj.item_name1)
+    log.info("item 1 amount ",ipn_obj.quantity1)
+    log.info("item 2 name ",ipn_obj.item_name2)
+    log.info("item 2 amount ",ipn_obj.quantity2)
    
     order_detail='here is the detail'
     order_detail_html='here is the detail html'
