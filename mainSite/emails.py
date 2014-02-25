@@ -143,13 +143,13 @@ def sendConfirmEmail(ipn_obj):
     names = name
     totals = 0
 
-    log.info("mc gross " + ipn_obj.mc_gross)
+    log.info("mc gross %f" % ipn_obj.mc_gross)
     log.info("query " + ipn_obj.query)
     log.info("cart item number " + ipn_obj.num_cart_items)
     log.info("item 1 name " + ipn_obj.item_name1)
-    log.info("item 1 amount "+ ipn_obj.quantity1)
+    log.info("item 1 amount %d" % ipn_obj.quantity1)
     log.info("item 2 name " + ipn_obj.item_name2)
-    log.info("item 2 amount " + ipn_obj.quantity2)
+    log.info("item 2 amount %d" % ipn_obj.quantity2)
    
     order_detail='here is the detail'
     order_detail_html='here is the detail html'
