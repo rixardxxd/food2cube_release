@@ -130,7 +130,7 @@ def sendConfirmEmail(ipn_obj):
         name = strings[0]
         email = strings[1]
         phone = strings[2]
-    log.info("Sending Confirm Email to" + name + " " + email + " " + phone)
+    log.info("Sending Confirm Email to " + name + " " + email + " " + phone)
 
     #prepare objects
     #myuser = MyUser.objects.get(id=user_id)
@@ -143,12 +143,13 @@ def sendConfirmEmail(ipn_obj):
     names = name
     totals = 0
 
-    log.info("mc gross ", ipn_obj.mc_gross)
-    log.info("cart item number ", ipn_obj.num_cart_items)
-    log.info("item 1 name ",ipn_obj.item_name1)
-    log.info("item 1 amount ",ipn_obj.quantity1)
-    log.info("item 2 name ",ipn_obj.item_name2)
-    log.info("item 2 amount ",ipn_obj.quantity2)
+    log.info("mc gross " + ipn_obj.mc_gross)
+    log.info("query " + ipn_obj.query)
+    log.info("cart item number " + ipn_obj.num_cart_items)
+    log.info("item 1 name " + ipn_obj.item_name1)
+    log.info("item 1 amount "+ ipn_obj.quantity1)
+    log.info("item 2 name " + ipn_obj.item_name2)
+    log.info("item 2 amount " + ipn_obj.quantity2)
    
     order_detail='here is the detail'
     order_detail_html='here is the detail html'
