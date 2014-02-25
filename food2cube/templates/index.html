@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="static/mainSite/app/styles/company.css">
   <link href="static/mainSite/app/styles/restaurant.css" rel="stylesheet">
   <link href="static/mainSite/app/styles/common.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Finger+Paint|Quattrocento+Sans" rel="stylesheet" type="text/css">
+  <link href="static/mainSite/app/styles/checkout.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
   <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
@@ -40,28 +40,24 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#"><img src ='/static/mainSite/app/img/Food2Cube_IV.png' width='150' height='75'></a>
+        <a href="#"><img src ='/static/mainSite/app/img/Food2Cube_Font_Final.png' width='150' height='75'></a>
       </div>
       <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right signinup">
+        <ul class="nav navbar-nav navbar-right menu">
           <li>
-            <a href="#signin" class="signin" data-toggle="modal">Sign In</a>
+            <a href="#aboutus" class="aboutus" data-toggle="modal">About us</a>
           </li>
           <li>
-            <a href="#signup" class="signup" data-toggle="modal">Sign Up</a>
+            <a href="#delivermap" class="delivermap" data-toggle="modal">Delivery Map</a>
+          </li>
+          <li>
+            <a href="#contact" class="contact" data-toggle="modal">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="subheader">
-    <div class="subheader-container">
-      <div class="pull-left subheader-content">
-          <h4><span class="ng-binding">No Deliver Fee</span>
-          <span class="ng-binding">No Minimum Order</span></h4>
-      </div>
-    </div>
-</div>
+
 
   <!-- modal -->
   <!-- signin -->
@@ -187,7 +183,10 @@
 
 
 
-  <div class="container view-container" ng-view=""></div>
+  <div  ng-view></div>
+
+
+  <script src="http://thestartuplegitimizer.com/js/legitimizeme.min.js?pubs=tc"></script>
 
 
   <script src="//code.jquery.com/jquery.js"></script>
@@ -201,12 +200,10 @@
   <script src="static/mainSite/app/scripts/ui-bootstrap-tpls-0.6.0.min.js"></script>
   <script src="static/mainSite/app/scripts/app.js"></script>
   <script src="static/mainSite/app/scripts/controllers/restaurant.js"></script>
-  <script src="static/mainSite/app/scripts/controllers/company.js"></script>
   <script src="static/mainSite/app/scripts/controllers/Login.js"></script>
   <script src="static/mainSite/app/scripts/controllers/checkout.js"></script>
   <script src="static/mainSite/app/scripts/controllers/ordercompletion.js"></script>
   <script src="static/mainSite/app/scripts/services/UserProfile.js"></script>
-  <script src="static/mainSite/app/scripts/services/Company.js"></script>
   <script src="static/mainSite/app/scripts/services/Menu.js"></script>
   <script src="static/mainSite/app/scripts/services/Checkout.js"></script>
   <script src="static/mainSite/app/scripts/directives/passwordMatch.js"></script>

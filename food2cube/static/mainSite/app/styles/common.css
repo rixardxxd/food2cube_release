@@ -2,48 +2,122 @@ html {
     height: 100%;
 }
 body {
+    font-family: 'Open Sans', sans-serif;
     height: 100%;
     padding-top: 50px;
-    background-color: #fffff7;
 }
 
 /*navbar*/
-
-/* use logo png instead now*/
-/*.logo {
-    font-family: 'Finger Paint', cursive;
-    color: #BF0000 !important;
-    font-size: 26px;
-}*/
-
-.signinup {
-    font-family: 'Quattrocento Sans', sans-serif;
+.container ul.menu{
+    float: right;
+    margin: 27px 5px 0 0;
+    list-style: none;
 }
 
-.signinup .signin, .signinup .signup {
-    color: #990000 !important;
+.container ul.menu li:first-child {
+    border-left: 1px solid #D84323;
+}
+.container ul.menu li{
+    display: inline;
+    border-right: 1px solid #D84323;
+}
+
+.container ul.menu li a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    margin: 0 20px;
+    color: #D84323;
+    padding: 0;
+}
+.navbar{
+    margin: 0;
 }
 
 /*subheader*/
 .subheader {
     min-width: 100%;
-    height: 65px;
     background-color: #D84323;
     display: inline-block;
     padding: 25px 9% 0px 9%;
+    margin-bottom: 30px;
 }
 .subheader-content {
     display: inline-block;
     color: #ffffff;
+    margin:0;
+    padding-top: 20px;
 }
 .subheader .ng-binding {
-    font-family: 'Quattrocento Sans', sans-serif;
-    margin-left: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    display: inline-block;
+    padding-left: 25px;
 }
 .subheader img {
     width: 200px;
     height: 120px;
 }
+
+.subheader span.deliver {
+    background-image: url(../img/flash-icon@2x.png);
+    background-size: 12px 24px;
+}
+
+.subheader span.opening {
+    background-image: url(../img/time-icon@2x.png);
+    background-size: 21px 21px;
+}
+
+
+button.custom-btn {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 24px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-weight: 400;
+    height: 59px;
+    cursor: point;
+    border: none;
+    text-transform: uppercase;
+    top: 0;
+    right: 20px;
+    float: right;
+    padding: 0 50px;
+}
+button.checkout-btn span.arrows {
+    background-image: url(../img/double-arrow@2x.png);
+    background-size: 14px 17px;
+    height: 17px;
+    width: 14px;
+    display: inline-block;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: center right;  
+}
+
+button.back-btn span.arrows {
+    background-image: url(../img/double-arrow@2x.png);
+    background-size: 14px 17px;
+    height: 17px;
+    width: 14px;
+    display: inline-block;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: center right;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
 
 /*content*/
 .view-container {
