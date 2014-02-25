@@ -11,10 +11,16 @@ def save_payment_and_send_email(sender, **kwargs):
     log.error('bbbbbbbbb')
     print 'Here it isssssss'
 
-    sendConfirmEmail("rixardxxd@gmail.com")
     
     if ipn_obj.custom is not None:
         log.info(ipn_obj.custom)
+        strings = ipn_obj.custom.split("|")
+
+        if len(strings) >=3
+            name = strings[0]
+            email = strings[1]
+            phone = strings[2]
+            sendConfirmEmail(name,email,phone)
 
 
 
