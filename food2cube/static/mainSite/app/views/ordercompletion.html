@@ -1,8 +1,18 @@
 <div>
-    Dear {{ firstName }} <&nbsp;>{{ lastName }}
-    Thank you for your payment. Your transaction has been completed,and a receipt for your purchase has been emailed to you.
-    You may log into your account at www.paypal.com/us to view details of this transaction.
-    A confirmation email will be sent to {{ email }},and you will be contacted at number {{ phone }}
-    You food will be delivered to the following address: Cisco parking lot A.
-
+    <div class="subheader">
+        <div class="pull-left subheader-content">
+            <span class="opening ng-binding">Order before 11:30am</span>
+            <span class="deliver ng-binding">Pick up 12:30pm @ Cisco parking lot A</span>
+        </div>
+        <button class="custom-btn back-btn" type="button" ng-click="goBack('/');"><span class="arrows"></span>BACK</button>
+    </div>
+    <div class="">
+        <span class="">
+             Dear {{ firstName }} <&nbsp;>{{ lastName }}
+                Thank you for your payment. Your transaction has been completed,and a receipt for your purchase has been emailed to you.
+                You may log into your account at www.paypal.com/us to view details of this transaction.
+                A confirmation email will be sent to {{ email }},and you will be contacted at number {{ phone }}
+                You food will be delivered to the following address: Cisco parking lot A.
+        </span>
+    </div>
 </div>

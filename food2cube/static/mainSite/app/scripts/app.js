@@ -12,7 +12,7 @@ angular.module('food2cubeApp', ['ngRoute','ui.bootstrap'])
         templateUrl: 'static/mainSite/app/views/checkout.html',
         controller: 'CheckoutCtrl'
       })
-      .when('/ordercompletion/:option', {
+      .when('/ordercompletion', {
         templateUrl: 'static/mainSite/app/views/ordercompletion.html',
         controller: 'OrderCompletionCtrl'
       })

@@ -4,6 +4,12 @@ angular.module('food2cubeApp')
   .controller('OrderCompletionCtrl', ['$log','$scope', '$http','$location', '$routeParams','DeliveryAddress',
         function ($log,$scope, $http,$location, $routeParams,DeliveryAddress)
         {
+
+             $scope.goBack = function ( path ) {
+                        $location.path( path );
+                    };
+
+            
             $scope.firstName = $location.search('firstName');
             //$log.info($scope.option);
 
