@@ -1,18 +1,31 @@
-<div>
-    <div class="subheader">
-        <div class="pull-left subheader-content">
-            <span class="opening ng-binding">Order before 11:30am</span>
-            <span class="deliver ng-binding">Pick up 12:30pm @ Cisco parking lot A</span>
-        </div>
-        <button class="custom-btn back-btn" type="button" ng-click="goBack('/');"><span class="arrows"></span>BACK</button>
+<div class="subheader">
+    <div class="pull-left subheader-content">
+        <span class="opening ng-binding">Order before 11:30am</span>
+        <span class="deliver ng-binding">Pick up 12:30pm @ Cisco parking lot A</span>
     </div>
-    <div class="">
-        <span class="">
-             Dear valued custom:<br>
-                Thank you for your payment. Your transaction has been completed,and receipts for your purchase from paypal and food2cube.com
-                has been emailed to the address you provided. You may log into your account at www.paypal.com/us to view details of this transaction.
-                Please notice:
-                You food will be delivered to the following address: Cisco parking lot A. Time: 12:30 pm.
-        </span>
+    <button class="custom-btn back-btn" type="button" ng-click="goBack('/');"><span class="arrows"></span>BACK</button>
+</div>
+<div class="confirmation">
+    <div class="thankban">
+        Thank you for your order<br>
     </div>
+    <div class="orderno">
+        Order number is : 12345<br>
+    </div>
+    <div class="letter">
+        You will receive an email confirmation with receipts attached shortly from 123@random.com.<br>
+        Details of this transaction could also be found by logging into your account at <a href="http://www.paypal.com/us" target="_blank">Paypal</a>.<br>
+        <br>
+        At 12:30pm, Your order will be delivered to the following address:<br>
+        <span id="address">Cisco parking lot A.<br></span>
+        <br>
+        <br>
+
+     
+         <!-- Dear valued customer:<br>
+            Thank you for your payment. Your transaction has been completed,and receipts for your purchase from paypal and food2cube.com
+            has been emailed to the address you provided. You may log into your account at www.paypal.com/us to view details of this transaction.
+            Please notice:
+            Your food will be delivered to the following address: Cisco parking lot A. Time: 12:30 pm.
+   -->  </div>
 </div>
