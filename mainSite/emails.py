@@ -77,7 +77,7 @@ def sendConfirmEmail(ipn_obj):
 
     receiver = email
     names = name
-    totals = ipn_obj.mc_gross
+    totals = str(ipn_obj.mc_gross)
 
     item_name1 = find_between(ipn_obj.query,"item_name1=","&")
     item_name2 = find_between(ipn_obj.query,"item_name2=","&")
