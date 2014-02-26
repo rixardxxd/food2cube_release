@@ -91,8 +91,8 @@ def sendConfirmEmail(ipn_obj):
     log.info("cart item number %d" % ipn_obj.num_cart_items)
     log.info("item_name1 %s" % item_name1)
     log.info("item_name2 %s" % item_name2)
-    log.info("quantity1 %d" % quantity1)
-    log.info("quantity2 %d" % quantity2)
+    log.info("quantity1 %s" % quantity1)
+    log.info("quantity2 %s" % quantity2)
 
 
 
