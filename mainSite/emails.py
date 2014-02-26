@@ -64,8 +64,8 @@ def sendConfirmEmail(ipn_obj):
 
     if len(strings) >=3:
         name = strings[0]
-        email = strings[1]
-        phone = strings[2]
+        phone = strings[1]
+        email = strings[2]
     log.info("Sending Confirm Email to " + name + " " + email + " " + phone)
 
     #prepare objects
@@ -95,16 +95,6 @@ def sendConfirmEmail(ipn_obj):
     log.info("quantity2 %s" % quantity2)
 
 
-
-
-    order_detail='here is the detail'
-    order_detail_html='here is the detail html'
-
- 
-
-    log.info("Order Detail:")
-    log.info(order_detail)
-    log.info(order_detail_html)
 
     hdr.addTo([receiver])
     hdr.addSubVal('-total-', [totals])
