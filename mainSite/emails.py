@@ -64,20 +64,19 @@ def sendConfirmEmail(ipn_obj):
 
     if len(strings) >=3:
         name = strings[0]
-        email = strings[1]
-        phone = strings[2]
-    log.info("Sending Confirm Email to " + name + " " + email + " " + phone)
+        phone = strings[1]
+        email = strings[2]
+    log.info("Sending Confirm Email to ")
+    log.info("name " + name)
+    log.info("email " + email)
+    log.info("phone " + phone)
 
-    #prepare objects
-    #myuser = MyUser.objects.get(id=user_id)
-    #transaction = Transaction.objects.get(id=transaction_id)
 
     #prepare email
     hdr = SmtpApiHeader()
 
-    receiver = email
-    names = name
-    totals = ipn_obj.mc_gross
+    receiver = [email]
+    totals = str(ipn_obj.mc_gross)
 
     item_name1 = find_between(ipn_obj.query,"item_name1=","&")
     item_name2 = find_between(ipn_obj.query,"item_name2=","&")
@@ -96,19 +95,9 @@ def sendConfirmEmail(ipn_obj):
 
 
 
-
-    order_detail='here is the detail'
-    order_detail_html='here is the detail html'
-
- 
-
-    log.info("Order Detail:")
-    log.info(order_detail)
-    log.info(order_detail_html)
-
-    hdr.addTo([receiver])
+    hdr.addTo(receiver)
     hdr.addSubVal('-total-', [totals])
-    hdr.addSubVal('-name-', [names])
+    hdr.addSubVal('-name-', [name])
     hdr.addSubVal('-phone-', [phone])
     hdr.addSubVal('-item_name1-', [item_name1])
     hdr.addSubVal('-item_name2-', [item_name2])
