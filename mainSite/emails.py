@@ -66,11 +66,11 @@ def sendConfirmEmail(ipn_obj):
         name = strings[0]
         phone = strings[1]
         email = strings[2]
-    log.info("Sending Confirm Email to " + name + " " + email + " " + phone)
+    log.info("Sending Confirm Email to ")
+    log.info("name " + name)
+    log.info("email " + email)
+    log.info("phone " + phone)
 
-    #prepare objects
-    #myuser = MyUser.objects.get(id=user_id)
-    #transaction = Transaction.objects.get(id=transaction_id)
 
     #prepare email
     hdr = SmtpApiHeader()
