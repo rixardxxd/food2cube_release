@@ -75,8 +75,7 @@ def sendConfirmEmail(ipn_obj):
     #prepare email
     hdr = SmtpApiHeader()
 
-    receiver = email
-    names = name
+    receiver = [email]
     totals = str(ipn_obj.mc_gross)
 
     item_name1 = find_between(ipn_obj.query,"item_name1=","&")
@@ -96,9 +95,9 @@ def sendConfirmEmail(ipn_obj):
 
 
 
-    hdr.addTo([receiver])
+    hdr.addTo(receiver)
     hdr.addSubVal('-total-', [totals])
-    hdr.addSubVal('-name-', [names])
+    hdr.addSubVal('-name-', [name])
     hdr.addSubVal('-phone-', [phone])
     hdr.addSubVal('-item_name1-', [item_name1])
     hdr.addSubVal('-item_name2-', [item_name2])
