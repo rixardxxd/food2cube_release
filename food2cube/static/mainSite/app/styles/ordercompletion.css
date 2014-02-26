@@ -1,0 +1,22 @@
+.confirmation {
+	margin: 0 10% 0 10%;
+}
+
+.confirmation .thankban {
+	font-size:400%;
+	font-weight:800;
+	padding-bottom: 2%;
+}
+
+.confirmation .orderno {
+	font-size:200%;
+	font-weight:700;
+}
+
+.confirmation .letter {
+	font-size: 16px;
+	padding-top: 1%;
+}
+#address {
+	padding-left: 10%;
+}
