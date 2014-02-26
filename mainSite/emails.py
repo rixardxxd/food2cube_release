@@ -29,94 +29,30 @@ content_html_template="""\
     <html>
         <head></head>
         <body>
-        <>
+        <img src ='/static/mainSite/app/img/Food2Cube_Font_Final.png' width='150' height='75'>
         <p>Hi! -name-<br>
            Thanks for ordering in food2cube!<br>
            Food ordered is:<br>
-           -order_detail_html- <br>
+           -item_name1-  -quantity1- <br>
+           -item_name2-  -quantity2- <br>
            and we have received your payment of $-total- <br>
-
-           The food will delivered to you soon, enjoy! <br>
+           We will contact you by phone number -phone-<br>
+           The food will be delivered to: <br>
            <br>
-           Regards,<br>
+           Cisco parking lot A @12:30 pm <br>
+           <br>
+           If any of the above information is not correct, <br>
+           please reply to this email as soon as possible!<br>
+           <br>
+           Best regards,<br>
            food2cube
         </p>
 
+        <img>
         </body>
     </html>
     """
 
-def sendOrderEmailToRestaurants():
-
-    rest_order=[]
-
-
-
-
-
-
-
-
-    return;
-
-def sendDeliverEmailToRestaurants():
-
-    rest_order=[]
-
-
-
-
-
-
-
-
-    return;
-
-
-
-def sendConfirmEmailOld(user_id, transaction_id, order_id):
-
-    log.info("Sending Confirm Email")
-
-    #prepare objects
-    myuser = MyUser.objects.get(id=user_id)
-    transaction = Transaction.objects.get(id=transaction_id)
-
-    #prepare email
-    hdr = SmtpApiHeader()
-
-    receiver = [myuser.email]
-    names = [myuser.get_name()]
-    totals = [float(transaction.total_amount)]
-
-    order = Order.objects.get(id=order_id)
-    order_detail=''
-    order_detail_html=''
-
-    orderlines=OrderLine.objects.filter(order=order)
-    for orderline in orderlines:
-        order_detail+=str(orderline)+"\n"
-        order_detail_html+=str(orderline)+"<br>"
-
-    log.info("Order Detail:")
-    log.info(order_detail)
-    log.info(order_detail_html)
-
-    hdr.addTo(receiver)
-    hdr.addSubVal('-total-', totals)
-    hdr.addSubVal('-name-', names)
-    hdr.addSubVal('-order_detail-', [order_detail])
-    hdr.addSubVal('-order_detail_html-', [order_detail_html])
-
-    hdr.setCategory("initial")  # Specify that this is an initial contact message
-    hdr.addFilterSetting('footer', 'enable', 1)
-    hdr.addFilterSetting('footer', "text/plain", "Thank you for your business!")
-
-    msg = EmailMultiAlternatives(subject_template, content_text_template, fromEmail, receiver, headers={"X-SMTPAPI": hdr.asJSON()})
-    msg.attach_alternative(content_html_template, "text/html")
-    msg.send()
-
-    return
 
 
 
@@ -139,18 +75,28 @@ def sendConfirmEmail(ipn_obj):
     #prepare email
     hdr = SmtpApiHeader()
 
-    receiver = [email]
+    receiver = email
     names = name
-    totals = 0
+    totals = ipn_obj.mc_gross
+
+    item_name1 = find_between(ipn_obj.query,"item_name1=","&")
+    item_name2 = find_between(ipn_obj.query,"item_name2=","&")
+    quantity1 = find_between(ipn_obj.query,"quantity1=","&")
+    quantity2 = find_between(ipn_obj.query,"quantity2=","&")
+
+
 
     log.info("mc gross %f" % ipn_obj.mc_gross)
     log.info("query " + ipn_obj.query)
     log.info("cart item number %d" % ipn_obj.num_cart_items)
-    log.info("item 1 name " + ipn_obj.item_name1)
-    log.info("item 1 amount %d" % ipn_obj.quantity1)
-    log.info("item 2 name " + ipn_obj.item_name2)
-    log.info("item 2 amount %d" % ipn_obj.quantity2)
-   
+    log.info("item_name1 %s" % item_name1)
+    log.info("item_name2 %s" % item_name2)
+    log.info("quantity1 %d" % quantity1)
+    log.info("quantity2 %d" % quantity2)
+
+
+
+
     order_detail='here is the detail'
     order_detail_html='here is the detail html'
 
@@ -160,17 +106,20 @@ def sendConfirmEmail(ipn_obj):
     log.info(order_detail)
     log.info(order_detail_html)
 
-    hdr.addTo(receiver)
+    hdr.addTo([receiver])
     hdr.addSubVal('-total-', [totals])
     hdr.addSubVal('-name-', [names])
-    hdr.addSubVal('-order_detail-', [order_detail])
-    hdr.addSubVal('-order_detail_html-', [order_detail_html])
+    hdr.addSubVal('-phone-', [phone])
+    hdr.addSubVal('-item_name1-', [item_name1])
+    hdr.addSubVal('-item_name2-', [item_name2])
+    hdr.addSubVal('-quantity1-', [quantity1])
+    hdr.addSubVal('-quantity2-', [quantity2])
 
     hdr.setCategory("initial")  # Specify that this is an initial contact message
     hdr.addFilterSetting('footer', 'enable', 1)
     hdr.addFilterSetting('footer', "text/plain", "Thank you for your business!")
 
-    msg = EmailMultiAlternatives(subject_template, content_text_template, fromEmail, receiver, headers={"X-SMTPAPI": hdr.asJSON()})
+    msg = EmailMultiAlternatives(subject_template, content_html_template, fromEmail, receiver, headers={"X-SMTPAPI": hdr.asJSON()})
     msg.attach_alternative(content_html_template, "text/html")
     msg.send()
 
@@ -178,6 +127,15 @@ def sendConfirmEmail(ipn_obj):
 
 import re
 import textwrap
+
+def find_between( s, first, last ):
+    try:
+        start = s.index( first ) + len( first )
+        end = s.index( last, start )
+        return s[start:end]
+    except ValueError:
+        return ""
+
 
 class SmtpApiHeader:
 
@@ -226,55 +184,4 @@ class SmtpApiHeader:
         str = 'X-SMTPAPI: %s' % textwrap.fill(j, subsequent_indent = '  ', width = 72)
         return str
 
-"""
-hdr = SmtpApiHeader.SmtpApiHeader()
-    # The list of addresses this message will be sent to
-    receiver = ['isaac@example.com', 'tim@example.com', 'jose@example.com']
-
-    # The names of the recipients
-    times = ['1pm', '2pm', '3pm']
-
-    # Another subsitution variable
-    names = ['Isaac', 'Tim', 'Jose']
-
-    # Set all of the above variables
-    hdr.addTo(receiver)
-    hdr.addSubVal('-time-', times)
-    hdr.addSubVal('-name-', names)
-
-    # Specify that this is an initial contact message
-    hdr.setCategory("initial")
-
-    # Enable a text footer and set it
-    hdr.addFilterSetting('footer', 'enable', 1)
-    hdr.addFilterSetting('footer', "text/plain", "Thank you for your business!")
-
-    # fromEmail is your email
-    # toEmail is recipient's email address
-    # For multiple recipient e-mails, the 'toEmail' address is irrelivant
-    fromEmail =  'testing@sendgrid.net'
-    toEmail = 'sendgrid@hotmail.com'
-
-    # Create message container - the correct MIME type is multipart/alternative.
-    # Using Django's 'EmailMultiAlternatives' class in this case to create and send.
-    # Create the body of the message (a plain-text and an HTML version).
-    # text is your plain-text email
-    # html is your html version of the email
-    # if the reciever is able to view html emails then only the html
-    # email will be displayed
-    subject = 'Contact Response for <-name-> at <-time->'
-    text_content = 'Hi -name-!\nHow are you?\n'
-    html =
-    <html>
-        <head></head>
-        <body>
-        <p>Hi! -name-<br>
-           How are you?<br>
-        </p>
-        </body>
-    </html>
-    """
-#    msg = EmailMultiAlternatives(subject, text_content, fromEmail, [toEmail], headers={"X-SMTPAPI": hdr.asJSON()})
-#    msg.attach_alternative(html, "text/html")
-#    msg.send()
 
