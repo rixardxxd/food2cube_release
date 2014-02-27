@@ -17,3 +17,9 @@
 .error {
 	margin: 10px 0 10px 0;
 }
+
+.confirm_title {
+    font-size:120%;
+    font-weight:400;
+    padding-bottom: 1%;
+}
