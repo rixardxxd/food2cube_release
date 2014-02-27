@@ -92,10 +92,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <span class="info" >{{checkoutuser.firstname}}</span>
-                <span class="info" >{{checkoutuser.lastname}}</span>
-                <span class="info" >{{checkoutuser.email}}</span>
-                <span class="info" >{{checkoutuser.phone}}</span>
+                <span class="confirm_title">Please confirm your delivery information:<br>
+                <p><span class="confirm_info" >Name:&nbsp{{checkoutuser.firstname}}&nbsp{{checkoutuser.lastname}}</span></p>
+                <p><span class="confirm_info" >Email:&nbsp{{checkoutuser.email}}</span></p>
+                <p><span class="confirm_info" >Phone:&nbsp{{checkoutuser.phone}}</span></p>
                 <button  class="btn btn-block btn-link" ng-click="checkout()">
                     <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
 
