@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('food2cubeApp', ['ngRoute','ui.bootstrap'])
+angular.module('food2cubeApp', ['ngRoute','ui.bootstrap','google-maps'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

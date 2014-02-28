@@ -53,13 +53,13 @@
             <thead>
             <tr>
                 <th>
-                    <a href="" ng-click="predicate = 'name'; reverse=!reverse">Item Name</a>
+                    Item Name
                 </th>
                 <th>
-                    <a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a>
+                    Price
                 </th>
                 <th>
-                    <a href="">Amount</a>
+                   Amount
                 </th>
             </tr>
             </thead>
@@ -80,9 +80,10 @@
             </tr>
             </tbody>
         </table>
-
-        <p>Total Amount:</p>
-        <p> {{ totalAmount | currency:"$"}}</p>
+        <div class="right shift-left">
+             <p><span class="confirm_title">Total Amount:</span></p>
+             <p><span class="right"> {{ totalAmount | currency:"$"}}</span></p>
+        </div>
     </div>
 </div>
 
@@ -96,6 +97,33 @@
                 <p><span class="confirm_info" >Name:&nbsp{{checkoutuser.firstname}}&nbsp{{checkoutuser.lastname}}</span></p>
                 <p><span class="confirm_info" >Email:&nbsp{{checkoutuser.email}}</span></p>
                 <p><span class="confirm_info" >Phone:&nbsp{{checkoutuser.phone}}</span></p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>
+                            Item Name
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in items | orderBy:predicate:reverse">
+                        <td>  {{item.name}}  </td>
+                        <td>  {{item.price | currency:"$"}}  </td>
+                        <td>  {{ item.amount }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="">
+                    <p><span class="confirm_title">Total Amount:</span></p>
+                    <p><span class="confirm_info">{{ totalAmount | currency:"$"}}</span></p>
+                </div>
                 <button  class="btn btn-block btn-link" ng-click="checkout()">
                     <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal"/>
 

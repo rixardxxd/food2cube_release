@@ -19,7 +19,16 @@
 }
 
 .confirm_title {
-    font-size:120%;
-    font-weight:400;
+    font-size:100%;
+    font-weight:700;
     padding-bottom: 1%;
+}
+
+.right {
+    float: right;
+}
+
+.shift-left{
+position:relative;
+left:-100px;
 }

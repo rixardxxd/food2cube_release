@@ -172,3 +172,8 @@ button.back-btn span.arrows {
     list-style: none;
     vertical-align: middle;
 }
+
+/*google map css*/
+.angular-google-map-container {
+    height: 400px;
+}
